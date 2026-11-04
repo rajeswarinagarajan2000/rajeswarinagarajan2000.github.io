@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Rajeswari Nagarajan - Power Platform Developer and Data Analyst in Chennai. Power Automate, Power BI and Power Apps projects.">
+<title>Rajeswari Nagarajan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: one narrow reading column; each project is a "flow run" — steps laid out like a Power Automate run history, outcome as the final step. */
+:root{
+  --bg:#f3f5f8; --surface:#ffffff; --ink:#141b26; --muted:#56627a; --line:#d9dfe8;
+  --accent:#1f5bd8; --accent-soft:#e3ebfc; --ok:#13804f; --ok-soft:#dff2e8; --amber:#b86b00;
+  --display:"Bricolage Grotesque",ui-sans-serif,system-ui,sans-serif;
+  --body:"IBM Plex Sans",ui-sans-serif,system-ui,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0f141c; --surface:#171e29; --ink:#e7ecf3; --muted:#9aa6ba; --line:#2a3445;
+  --accent:#7aa2ff; --accent-soft:#1c2a47; --ok:#4fd08f; --ok-soft:#163327; --amber:#f0a840; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0f141c; --surface:#171e29; --ink:#e7ecf3; --muted:#9aa6ba; --line:#2a3445;
+  --accent:#7aa2ff; --accent-soft:#1c2a47; --ok:#4fd08f; --ok-soft:#163327; --amber:#f0a840; color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0}
+.wrap{max-width:880px;margin:0 auto}
+a{color:var(--accent)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;line-height:1.1}
+.label{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+
+/* nav */
+nav{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;padding-block:22px;border-bottom:1px solid var(--line)}
+nav .mark{font-family:var(--display);font-weight:800;font-size:18px}
+nav ul{display:flex;gap:20px;list-style:none;margin:0;padding:0;flex-wrap:wrap}
+nav a{color:var(--muted);text-decoration:none;font-size:14px}
+nav a:hover{color:var(--ink)}
+
+/* hero */
+header.hero{padding-block:64px 48px;display:grid;gap:28px}
+.status{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:13px;color:var(--ok);background:var(--ok-soft);padding:6px 12px;border-radius:999px;width:fit-content}
+.status::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--ok)}
+.hero h1{font-size:clamp(40px,7vw,72px);font-weight:800;letter-spacing:-.02em}
+.hero h1 span{color:var(--accent)}
+.hero p.lede{font-size:clamp(18px,2.3vw,21px);color:var(--muted);max-width:60ch;margin:0}
+.facts{display:flex;flex-wrap:wrap;gap:10px 28px;font-size:14px;color:var(--muted)}
+.facts b{color:var(--ink);font-weight:600}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.btn{font:500 15px var(--body);padding:11px 18px;border-radius:8px;border:1px solid var(--line);background:var(--surface);color:var(--ink);text-decoration:none;cursor:pointer}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--bg)}
+
+/* section */
+section{padding-block:56px;border-top:1px solid var(--line)}
+section > h2{font-size:clamp(28px,4vw,38px);font-weight:700;margin-top:6px;margin-bottom:28px}
+
+/* project */
+.project{display:grid;gap:18px;padding-block:28px;border-bottom:1px dashed var(--line)}
+.project:last-child{border-bottom:0}
+.p-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap}
+.project h3{font-size:clamp(22px,3vw,28px);font-weight:700}
+.p-meta{font-family:var(--mono);font-size:13px;color:var(--muted)}
+.project p{margin:0;max-width:66ch}
+.tags{display:flex;flex-wrap:wrap;gap:8px}
+.tag{font-family:var(--mono);font-size:12px;padding:3px 9px;border-radius:5px;background:var(--accent-soft);color:var(--accent)}
+.badge{font-family:var(--mono);font-size:12px;padding:3px 9px;border-radius:5px;border:1px solid var(--line);color:var(--muted)}
+
+/* flow run strip */
+.run{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px;overflow-x:auto}
+.run .label{margin-bottom:12px;display:block}
+.steps{display:flex;align-items:stretch;gap:0;min-width:min-content}
+.step{display:flex;flex-direction:column;gap:2px;min-width:150px;max-width:190px;padding:10px 12px;border:1px solid var(--line);border-radius:8px;background:var(--bg)}
+.step small{font-family:var(--mono);font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.step span{font-size:14px;font-weight:500;line-height:1.35}
+.step.done{border-color:var(--ok);background:var(--ok-soft)}
+.step.done small{color:var(--ok)}
+.arrow{align-self:center;width:28px;flex:none;height:2px;background:var(--line);position:relative}
+.arrow::after{content:"";position:absolute;right:-1px;top:-4px;border:5px solid transparent;border-left-color:var(--line);border-right:0}
+
+.kpis{display:flex;flex-wrap:wrap;gap:10px 28px}
+.kpi{display:flex;flex-direction:column}
+.kpi b{font-family:var(--display);font-size:28px;font-weight:700;font-variant-numeric:tabular-nums;line-height:1.1}
+.kpi span{font-size:13px;color:var(--muted)}
+
+/* experience */
+.role{display:grid;grid-template-columns:180px 1fr;gap:20px}
+.role .when{font-family:var(--mono);font-size:13px;color:var(--muted)}
+.role h3{font-size:22px}
+.role ul{margin:10px 0 0;padding-left:18px;display:grid;gap:6px}
+.role > div{min-width:0}
+
+/* skills */
+.skills{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 32px}
+.skill{display:grid;grid-template-columns:1fr auto;gap:4px 12px;align-items:center;padding-block:8px;border-bottom:1px solid var(--line)}
+.skill .name{font-weight:500}
+.skill .lvl{font-family:var(--mono);font-size:12px;color:var(--muted)}
+.meter{grid-column:1/-1;height:4px;background:var(--line);border-radius:2px;overflow:hidden}
+.meter i{display:block;height:100%;background:var(--accent)}
+.note{font-size:13px;color:var(--muted);margin-top:16px}
+
+/* edu */
+.list{display:grid;gap:14px}
+.item{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding-block:6px}
+.item > div{min-width:0}
+.item b{font-weight:600}
+.item .sub{color:var(--muted);font-size:14px}
+.item .yr{font-family:var(--mono);font-size:13px;color:var(--muted)}
+h3.sm{font-size:18px;margin:32px 0 10px}
+
+/* contact */
+.contact{display:grid;gap:14px}
+.copyrow{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.copyrow code{font-family:var(--mono);font-size:15px;background:var(--surface);border:1px solid var(--line);padding:8px 12px;border-radius:6px;user-select:all;word-break:break-all}
+footer{padding-block:32px;font-size:13px;color:var(--muted);border-top:1px solid var(--line)}
+
+@media (max-width:640px){
+  .role{grid-template-columns:1fr;gap:4px}
+  .skills{grid-template-columns:1fr}
+  nav ul{gap:14px}
+}
+@media (prefers-reduced-motion:no-preference){
+  .step.done{animation:pulse 2.4s ease-out 1}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 var(--ok-soft)}100%{box-shadow:0 0 0 10px transparent}}
+}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+<nav>
+  <div class="mark">Rajeswari Nagarajan</div>
+  <ul>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<header class="hero">
+  <div class="status">Open to roles · Immediate joiner</div>
+  <h1>Rajeswari Nagarajan<br><span>Power Platform Developer</span> &amp; Data Analyst</h1>
+  <p class="lede">I build automations and dashboards that people actually use. My Power Automate allocation system has run in production for over a year at 95% accuracy, and my monthly business review dashboard is used by senior management.</p>
+  <div class="facts">
+    <div><b>3.6 years</b> experience</div>
+    <div><b>2 years</b> Power Automate &amp; Power BI</div>
+    <div><b>USA · APAC · LATAM</b> clients</div>
+    <div><b>Chennai</b> · on-site, hybrid or remote</div>
+  </div>
+  <div class="cta">
+    <a class="btn primary" href="#projects">See projects</a>
+    <a class="btn" href="https://www.linkedin.com/in/rajeswari-nagarajan-4632503a1/" target="_blank" rel="noopener">LinkedIn</a>
+  </div>
+</header>
+
+<section id="projects">
+  <div class="label">Selected work</div>
+  <h2>Projects</h2>
+
+  <article class="project">
+    <div class="p-head">
+      <h3>Allocation Automation System</h3>
+      <div class="p-meta">Production · 1+ year live</div>
+    </div>
+    <div class="tags"><span class="tag">Power Automate Cloud</span><span class="tag">Power Automate Desktop (RPA)</span><span class="badge">Sole developer</span></div>
+    <p>I designed and built this system on my own initiative to automate the team's allocation work. The desktop flow handles the RPA steps and is called from a cloud flow, so the whole process runs end to end without manual handoffs.</p>
+    <div class="run" role="img" aria-label="Flow run: cloud flow trigger, run desktop flow, process allocation, output with 95% accuracy">
+      <span class="label">Flow run · succeeded</span>
+      <div class="steps">
+        <div class="step"><small>Trigger</small><span>Cloud flow starts</span></div><div class="arrow"></div>
+        <div class="step"><small>Action</small><span>Run a flow built with Power Automate for desktop</span></div><div class="arrow"></div>
+        <div class="step"><small>Desktop flow</small><span>Process allocation</span></div><div class="arrow"></div>
+        <div class="step done"><small>Outcome</small><span>95% accuracy</span></div>
+      </div>
+    </div>
+    <div class="kpis">
+      <div class="kpi"><b>95%</b><span>accuracy</span></div>
+      <div class="kpi"><b>~30 min</b><span>saved per day</span></div>
+      <div class="kpi"><b>1+ year</b><span>in production</span></div>
+    </div>
+  </article>
+
+  <article class="project">
+    <div class="p-head">
+      <h3>MBR Executive Dashboard</h3>
+      <div class="p-meta">Production · Monthly business review</div>
+    </div>
+    <div class="tags"><span class="tag">Power BI</span><span class="tag">DAX</span><span class="tag">Power Query</span><span class="tag">Data modeling</span></div>
+    <p>A Power BI dashboard for the monthly business review. I shaped the source data in Power Query, built the model and wrote the DAX measures. Senior management adopted it as their reporting view.</p>
+    <div class="run" role="img" aria-label="Pipeline: source data, Power Query, data model and DAX, dashboard adopted by senior management">
+      <span class="label">Data pipeline</span>
+      <div class="steps">
+        <div class="step"><small>Source</small><span>Business data</span></div><div class="arrow"></div>
+        <div class="step"><small>Transform</small><span>Power Query</span></div><div class="arrow"></div>
+        <div class="step"><small>Model</small><span>Relationships &amp; DAX measures</span></div><div class="arrow"></div>
+        <div class="step done"><small>Outcome</small><span>Adopted by senior management</span></div>
+      </div>
+    </div>
+  </article>
+
+  <article class="project">
+    <div class="p-head">
+      <h3>Leave Management System</h3>
+      <div class="p-meta">Jul – Oct 2026</div>
+    </div>
+    <div class="tags"><span class="tag">Power Apps</span><span class="tag">Power Automate</span><span class="tag">SharePoint</span><span class="tag">Dataverse</span></div>
+    <p>A Power Apps leave management system with automated workflows for requests and approvals. I am also building a canvas-app version on SharePoint as a portfolio piece.</p>
+    <div class="run" role="img" aria-label="Workflow: employee submits leave request, approval flow, manager decision, employee notified">
+      <span class="label">Workflow</span>
+      <div class="steps">
+        <div class="step"><small>App</small><span>Employee submits request</span></div><div class="arrow"></div>
+        <div class="step"><small>Flow</small><span>Approval routed automatically</span></div><div class="arrow"></div>
+        <div class="step"><small>Decision</small><span>Approve or reject</span></div><div class="arrow"></div>
+        <div class="step done"><small>Outcome</small><span>Status updated &amp; notified</span></div>
+      </div>
+    </div>
+  </article>
+
+  <article class="project">
+    <div class="p-head">
+      <h3>Sales &amp; Automation ROI Report</h3>
+      <div class="p-meta">Sep – Nov 2026 · Portfolio</div>
+    </div>
+    <div class="tags"><span class="tag">Power BI</span><span class="tag">DAX</span><span class="tag">KPIs</span><span class="badge">Independent project</span></div>
+    <p>A three-page Power BI report I built independently on sample data, covering sales performance, targets and the return on automation work.</p>
+    <div class="run" role="img" aria-label="Report pages: Sales Performance Executive Overview, Targets and Customers, Power Automate Flow Performance and ROI">
+      <span class="label">Report pages</span>
+      <div class="steps">
+        <div class="step"><small>Page 1</small><span>Sales Performance Executive Overview</span></div><div class="arrow"></div>
+        <div class="step"><small>Page 2</small><span>Targets &amp; Customers</span></div><div class="arrow"></div>
+        <div class="step done"><small>Page 3</small><span>Power Automate Flow Performance &amp; ROI</span></div>
+      </div>
+    </div>
+  </article>
+</section>
+
+<section id="experience">
+  <div class="label">Experience</div>
+  <h2>Where I've worked</h2>
+  <div class="role">
+    <div class="when">Nov 2022 – Jun 2026</div>
+    <div>
+      <h3>Process Associate</h3>
+      <div class="p-meta">Vision Group Retail · Chennai</div>
+      <ul>
+        <li>Built and maintained Power Automate cloud and desktop automations, including the Allocation Automation System.</li>
+        <li>Created Power BI dashboards and data visualizations, including the MBR dashboard used by senior management.</li>
+        <li>Checked AI model performance as part of client delivery.</li>
+        <li>Worked with clients across the USA, APAC and LATAM, with Store 360 as the main client.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="label">Toolkit</div>
+  <h2>Skills</h2>
+  <div class="skills">
+    <div class="skill"><span class="name">Power Automate (Cloud &amp; Desktop)</span><span class="lvl">Advanced</span><div class="meter"><i style="width:90%"></i></div></div>
+    <div class="skill"><span class="name">Power BI · DAX · Power Query</span><span class="lvl">Advanced</span><div class="meter"><i style="width:85%"></i></div></div>
+    <div class="skill"><span class="name">Excel &amp; Macros</span><span class="lvl">2 yrs hands-on</span><div class="meter"><i style="width:75%"></i></div></div>
+    <div class="skill"><span class="name">SQL</span><span class="lvl">6 months</span><div class="meter"><i style="width:45%"></i></div></div>
+    <div class="skill"><span class="name">Power Apps (Canvas, Model-driven)</span><span class="lvl">Fundamentals</span><div class="meter"><i style="width:40%"></i></div></div>
+    <div class="skill"><span class="name">Dataverse · SharePoint · Microsoft 365</span><span class="lvl">Working</span><div class="meter"><i style="width:60%"></i></div></div>
+    <div class="skill"><span class="name">Make (Integromat) · n8n</span><span class="lvl">Working</span><div class="meter"><i style="width:45%"></i></div></div>
+    <div class="skill"><span class="name">ChatGPT · Copilot · Gamma</span><span class="lvl">Daily use</span><div class="meter"><i style="width:65%"></i></div></div>
+  </div>
+  <p class="note">SQL covers joins, aggregations, WHERE / GROUP BY and window functions such as LEAD and LAG.</p>
+</section>
+
+<section id="education">
+  <div class="label">Education &amp; certifications</div>
+  <h2>Learning</h2>
+  <div class="list">
+    <div class="item"><div><b>M.E.</b> · Satyam College of Engineering<div class="sub">CGPA 8.1 · completed alongside full-time work</div></div><div class="yr">2023 – 2025</div></div>
+    <div class="item"><div><b>B.E.</b> · University College of Engineering, Nagercoil<div class="sub">Lateral entry · CGPA 7.89</div></div><div class="yr">2018 – 2021</div></div>
+  </div>
+  <h3 class="sm">Certifications</h3>
+  <div class="list">
+    <div class="item"><div><b>SQL for Data Management Using AI</b><div class="sub">be10X · AI Career Accelerator Program</div></div><div class="yr">Jul 2026</div></div>
+    <div class="item"><div><b>AI Fundamentals &amp; Ecosystem Mastery</b><div class="sub">be10X</div></div><div class="yr">Jul 2026</div></div>
+    <div class="item"><div><b>AI and ML for Business Applications</b><div class="sub">Alison</div></div><div class="yr"></div></div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="label">Contact</div>
+  <h2>Let's talk</h2>
+  <div class="contact">
+    <p style="margin:0;max-width:60ch">I'm looking for Power Automate, Power BI and automation analyst roles in Chennai or remote. I can join immediately. I speak English and Tamil.</p>
+    <div class="copyrow"><code id="email">rajeswarinagarajan2000@gmail.com</code><button class="btn" id="copy" type="button">Copy email</button></div>
+    <div><a href="https://www.linkedin.com/in/rajeswari-nagarajan-4632503a1/" target="_blank" rel="noopener">linkedin.com/in/rajeswari-nagarajan-4632503a1</a></div>
+  </div>
+</section>
+
+<footer>Rajeswari Nagarajan · Chennai, India</footer>
+</div>
+
+<script>
+document.getElementById('copy').addEventListener('click', function(){
+  var b=this, t=document.getElementById('email').textContent;
+  function sel(){var r=document.createRange();r.selectNodeContents(document.getElementById('email'));var s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent='Selected, press Ctrl+C';}
+  try{navigator.clipboard.writeText(t).then(function(){b.textContent='Copied';setTimeout(function(){b.textContent='Copy email'},1800)},sel)}catch(e){sel()}
+});
+</script>
+</body>
+</html>
