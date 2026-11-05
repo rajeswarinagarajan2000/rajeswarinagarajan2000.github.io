@@ -26,7 +26,7 @@
 *{box-sizing:border-box}
 body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6;
   padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0}
-.wrap{max-width:880px;margin:0 auto}
+.wrap{max-width:1040px;margin:0 auto}
 a{color:var(--accent)}
 a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
 h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;line-height:1.1}
@@ -124,6 +124,22 @@ footer{padding-block:32px;font-size:13px;color:var(--muted);border-top:1px solid
   .step.done{animation:pulse 2.4s ease-out 1}
   @keyframes pulse{0%{box-shadow:0 0 0 0 var(--ok-soft)}100%{box-shadow:0 0 0 10px transparent}}
 }
+
+.shots{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.shots.one{grid-template-columns:minmax(0,1fr)}
+.shot{margin:0;display:grid;gap:6px;min-width:0}
+.shot.wide{grid-column:1/-1}
+.shot img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:8px;background:var(--surface)}
+.shot a:hover img{border-color:var(--accent)}
+.shot figcaption{font-size:13px;color:var(--muted);line-height:1.4}
+.shots.one .shot img{max-width:900px}
+.shots.one.narrow .shot img{max-width:460px}
+.shot img{aspect-ratio:auto}
+.video{position:relative;aspect-ratio:16/9;max-width:100%;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--surface)}
+.video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.vlink{font-size:14px}
+@media (max-width:760px){.shots{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:480px){.shots{grid-template-columns:minmax(0,1fr)}}
 </style>
 </head>
 <body>
@@ -143,7 +159,7 @@ footer{padding-block:32px;font-size:13px;color:var(--muted);border-top:1px solid
 <header class="hero">
   <div class="status">Open to roles · Immediate joiner</div>
   <h1>Rajeswari Nagarajan<br><span>Power Platform Developer</span> &amp; Data Analyst</h1>
-  <p class="lede">I build automations and dashboards that people actually use. My Power Automate allocation system has run in production for over a year at 95% accuracy, and my monthly business review dashboard is used by senior management.</p>
+  <p class="lede">I build automations and dashboards that people actually use. My Power Automate allocation system automates a once-manual process at 95% accuracy, and my monthly business review dashboard is senior management's primary reporting tool.</p>
   <div class="facts">
     <div><b>3.6 years</b> experience</div>
     <div><b>2 years</b> Power Automate &amp; Power BI</div>
@@ -165,76 +181,76 @@ footer{padding-block:32px;font-size:13px;color:var(--muted);border-top:1px solid
   <article class="project">
     <div class="p-head">
       <h3>Allocation Automation System</h3>
-      <div class="p-meta">Production · 1+ year live</div>
+      <div class="p-meta">Vision Group Retail · Dec 2025 – Mar 2026</div>
     </div>
-    <div class="tags"><span class="tag">Power Automate Cloud</span><span class="tag">Power Automate Desktop (RPA)</span><span class="badge">Sole developer</span></div>
-    <p>I designed and built this system on my own initiative to automate the team's allocation work. The desktop flow handles the RPA steps and is called from a cloud flow, so the whole process runs end to end without manual handoffs.</p>
-    <div class="run" role="img" aria-label="Flow run: cloud flow trigger, run desktop flow, process allocation, output with 95% accuracy">
-      <span class="label">Flow run · succeeded</span>
-      <div class="steps">
-        <div class="step"><small>Trigger</small><span>Cloud flow starts</span></div><div class="arrow"></div>
-        <div class="step"><small>Action</small><span>Run a flow built with Power Automate for desktop</span></div><div class="arrow"></div>
-        <div class="step"><small>Desktop flow</small><span>Process allocation</span></div><div class="arrow"></div>
-        <div class="step done"><small>Outcome</small><span>95% accuracy</span></div>
-      </div>
-    </div>
+    <div class="tags"><span class="tag">Power Automate Cloud</span><span class="tag">Power Automate Desktop (RPA)</span><span class="tag">Excel</span><span class="tag">Outlook</span><span class="tag">Teams</span><span class="tag">SharePoint</span><span class="badge">Sole developer</span></div>
+    <p>The allocation process was fully manual. I taught myself Power Automate and designed, built and deployed an end-to-end automated solution, the first of its kind at Vision Group. It connects Microsoft 365 apps for data flow, notifications and approvals, removing the manual handoffs between teams.</p>
     <div class="kpis">
-      <div class="kpi"><b>95%</b><span>accuracy</span></div>
-      <div class="kpi"><b>~30 min</b><span>saved per day</span></div>
-      <div class="kpi"><b>1+ year</b><span>in production</span></div>
+      <div class="kpi"><b>95%</b><span>automation accuracy</span></div>
+      <div class="kpi"><b>~30 min</b><span>saved every working day</span></div>
+      <div class="kpi"><b>~11 hrs</b><span>saved per month</span></div>
     </div>
+    <div class="video">
+      <iframe src="https://drive.google.com/file/d/1IVU4KNPNVNn2SbM0IXLFicoLe--SnCPg/preview" title="Allocation Automation live demo" allow="autoplay; fullscreen" allowfullscreen loading="lazy"></iframe>
+    </div>
+    <p class="vlink"><a href="https://drive.google.com/file/d/1IVU4KNPNVNn2SbM0IXLFicoLe--SnCPg/view" target="_blank" rel="noopener">Watch the live demo on Google Drive</a></p>
   </article>
 
   <article class="project">
     <div class="p-head">
       <h3>MBR Executive Dashboard</h3>
-      <div class="p-meta">Production · Monthly business review</div>
+      <div class="p-meta">Vision Group Retail · Mar – Apr 2026</div>
     </div>
-    <div class="tags"><span class="tag">Power BI</span><span class="tag">DAX</span><span class="tag">Power Query</span><span class="tag">Data modeling</span></div>
-    <p>A Power BI dashboard for the monthly business review. I shaped the source data in Power Query, built the model and wrote the DAX measures. Senior management adopted it as their reporting view.</p>
-    <div class="run" role="img" aria-label="Pipeline: source data, Power Query, data model and DAX, dashboard adopted by senior management">
-      <span class="label">Data pipeline</span>
-      <div class="steps">
-        <div class="step"><small>Source</small><span>Business data</span></div><div class="arrow"></div>
-        <div class="step"><small>Transform</small><span>Power Query</span></div><div class="arrow"></div>
-        <div class="step"><small>Model</small><span>Relationships &amp; DAX measures</span></div><div class="arrow"></div>
-        <div class="step done"><small>Outcome</small><span>Adopted by senior management</span></div>
-      </div>
+    <div class="tags"><span class="tag">Power BI</span><span class="tag">DAX</span><span class="tag">Power Query</span><span class="tag">Data modeling</span><span class="tag">Excel</span></div>
+    <p>An executive Monthly Business Review dashboard that brings data from 4+ sources into one reporting view. I built the DAX measures and Power Query transformations for KPI tracking, trend analysis and cross-unit comparison, and automated the refresh so the report no longer needs manual preparation. Senior management adopted it as their primary reporting tool.</p>
+    <div class="shots one"><figure class="shot wide"><a href="img/mbr-headcount.jpg" target="_blank" rel="noopener"><img src="img/mbr-headcount.jpg" width="910" height="498" decoding="async" alt="Headcount utilization by subscene, dedicated vs non-dedicated model owners (client and staff names left out)"></a><figcaption>Headcount utilization by subscene, dedicated vs non-dedicated model owners (client and staff names left out)</figcaption></figure></div>
+  </article>
+
+  <article class="project">
+    <div class="p-head">
+      <h3>Microsoft 365 Process Automation</h3>
+      <div class="p-meta">Vision Group Retail · Feb – Apr 2026</div>
     </div>
+    <div class="tags"><span class="tag">Power Automate</span><span class="tag">Outlook</span><span class="tag">Teams</span><span class="tag">SharePoint</span><span class="tag">Excel</span></div>
+    <p>Several cloud flows that cut manual email handling. They route and respond to emails automatically and post Teams notifications as part of approval workflows. The flow below picks up UAT and ad-hoc request emails, files their attachments in a new SharePoint folder and notifies the team in Teams.</p>
+    <div class="shots one narrow"><figure class="shot"><a href="img/m365-uat-flow.jpg" target="_blank" rel="noopener"><img src="img/m365-uat-flow.jpg" width="797" height="587" decoding="async" alt="UAT &amp; ad-hoc request flow: new email → SharePoint folder → loop over attachments → Teams message"></a><figcaption>UAT &amp; ad-hoc request flow: new email → SharePoint folder → loop over attachments → Teams message</figcaption></figure></div>
   </article>
 
   <article class="project">
     <div class="p-head">
       <h3>Leave Management System</h3>
-      <div class="p-meta">Jul – Oct 2026</div>
+      <div class="p-meta">Self-initiated · Jul – Oct 2026</div>
     </div>
-    <div class="tags"><span class="tag">Power Apps</span><span class="tag">Power Automate</span><span class="tag">SharePoint</span><span class="tag">Dataverse</span></div>
-    <p>A Power Apps leave management system with automated workflows for requests and approvals. I am also building a canvas-app version on SharePoint as a portfolio piece.</p>
-    <div class="run" role="img" aria-label="Workflow: employee submits leave request, approval flow, manager decision, employee notified">
-      <span class="label">Workflow</span>
-      <div class="steps">
-        <div class="step"><small>App</small><span>Employee submits request</span></div><div class="arrow"></div>
-        <div class="step"><small>Flow</small><span>Approval routed automatically</span></div><div class="arrow"></div>
-        <div class="step"><small>Decision</small><span>Approve or reject</span></div><div class="arrow"></div>
-        <div class="step done"><small>Outcome</small><span>Status updated &amp; notified</span></div>
-      </div>
+    <div class="tags"><span class="tag">Power Apps (Canvas)</span><span class="tag">Power Fx</span><span class="tag">Power Automate</span><span class="tag">SharePoint Lists</span><span class="tag">Outlook</span></div>
+    <p>An end-to-end leave system on the Power Platform. Employees and managers log in to separate, role-based screens. Employees submit Casual, Earned or Permission leave with the total days calculated automatically. A Power Automate flow emails the manager the moment a request is created, and the manager approves or rejects it in one click. A dashboard tracks totals and colour-coded status.</p>
+    <div class="shots">
+      <figure class="shot"><a href="img/leave-login.jpg" target="_blank" rel="noopener"><img src="img/leave-login.jpg" width="1600" height="785" decoding="async" alt="Employee login, with a separate manager login"></a><figcaption>Employee login, with a separate manager login</figcaption></figure>
+      <figure class="shot"><a href="img/leave-request.jpg" target="_blank" rel="noopener"><img src="img/leave-request.jpg" width="1600" height="814" decoding="async" alt="New leave request with auto-calculated days"></a><figcaption>New leave request with auto-calculated days</figcaption></figure>
+      <figure class="shot"><a href="img/leave-submitted.jpg" target="_blank" rel="noopener"><img src="img/leave-submitted.jpg" width="1600" height="857" decoding="async" alt="Confirmation screen after submitting"></a><figcaption>Confirmation screen after submitting</figcaption></figure>
+      <figure class="shot"><a href="img/leave-email.jpg" target="_blank" rel="noopener"><img src="img/leave-email.jpg" width="1112" height="460" decoding="async" alt="Email the flow sends to the manager"></a><figcaption>Email the flow sends to the manager</figcaption></figure>
+      <figure class="shot"><a href="img/leave-pending.jpg" target="_blank" rel="noopener"><img src="img/leave-pending.jpg" width="1600" height="849" decoding="async" alt="Manager queue with one-click Approve / Reject"></a><figcaption>Manager queue with one-click Approve / Reject</figcaption></figure>
+      <figure class="shot"><a href="img/leave-approved.jpg" target="_blank" rel="noopener"><img src="img/leave-approved.jpg" width="1600" height="861" decoding="async" alt="Approval confirmation"></a><figcaption>Approval confirmation</figcaption></figure>
+      <figure class="shot"><a href="img/leave-dashboard.jpg" target="_blank" rel="noopener"><img src="img/leave-dashboard.jpg" width="1600" height="857" decoding="async" alt="Leave dashboard with KPI cards and status history"></a><figcaption>Leave dashboard with KPI cards and status history</figcaption></figure>
+      <figure class="shot"><a href="img/leave-flow.jpg" target="_blank" rel="noopener"><img src="img/leave-flow.jpg" width="1495" height="897" decoding="async" alt="Flow: SharePoint item created → send email"></a><figcaption>Flow: SharePoint item created → send email</figcaption></figure>
+      <figure class="shot"><a href="img/leave-run-history.jpg" target="_blank" rel="noopener"><img src="img/leave-run-history.jpg" width="1600" height="529" decoding="async" alt="Flow run history"></a><figcaption>Flow run history</figcaption></figure>
     </div>
   </article>
 
   <article class="project">
     <div class="p-head">
-      <h3>Sales &amp; Automation ROI Report</h3>
-      <div class="p-meta">Sep – Nov 2026 · Portfolio</div>
+      <h3>Retail Sales &amp; Automation ROI Dashboards</h3>
+      <div class="p-meta">Independent project · Sep – Nov 2026</div>
     </div>
-    <div class="tags"><span class="tag">Power BI</span><span class="tag">DAX</span><span class="tag">KPIs</span><span class="badge">Independent project</span></div>
-    <p>A three-page Power BI report I built independently on sample data, covering sales performance, targets and the return on automation work.</p>
-    <div class="run" role="img" aria-label="Report pages: Sales Performance Executive Overview, Targets and Customers, Power Automate Flow Performance and ROI">
-      <span class="label">Report pages</span>
-      <div class="steps">
-        <div class="step"><small>Page 1</small><span>Sales Performance Executive Overview</span></div><div class="arrow"></div>
-        <div class="step"><small>Page 2</small><span>Targets &amp; Customers</span></div><div class="arrow"></div>
-        <div class="step done"><small>Page 3</small><span>Power Automate Flow Performance &amp; ROI</span></div>
-      </div>
+    <div class="tags"><span class="tag">Power BI</span><span class="tag">DAX</span><span class="tag">Power Query</span><span class="tag">Data modeling</span><span class="badge">Sample data</span></div>
+    <p>A three-page interactive Power BI report built on a sample retail and automation dataset. It covers sales against the prior year and targets, customer segments and channels, and the run health and ROI of Power Automate flows. The DAX includes year-on-year comparison, ranking, target gap and achievement, and ROI calculations, with slicers for year, region and channel.</p>
+    <div class="shots">
+      <figure class="shot wide"><a href="img/sales-exec-overview.jpg" target="_blank" rel="noopener"><img src="img/sales-exec-overview.jpg" width="1600" height="894" decoding="async" alt="Sales Performance: KPIs, YoY trend, store ranking, category split, product table, target gauge"></a><figcaption>Sales Performance: KPIs, YoY trend, store ranking, category split, product table, target gauge</figcaption></figure>
+      <figure class="shot wide"><a href="img/sales-targets-customers.jpg" target="_blank" rel="noopener"><img src="img/sales-targets-customers.jpg" width="1600" height="886" decoding="async" alt="Targets &amp; Customers: sales vs target by region, achievement trend, segments, channel comparison"></a><figcaption>Targets &amp; Customers: sales vs target by region, achievement trend, segments, channel comparison</figcaption></figure>
+      <figure class="shot wide"><a href="img/flow-roi.jpg" target="_blank" rel="noopener"><img src="img/flow-roi.jpg" width="1600" height="894" decoding="async" alt="Flow Performance &amp; ROI: runs, success rate, hours and cost saved, failures by error category"></a><figcaption>Flow Performance &amp; ROI: runs, success rate, hours and cost saved, failures by error category</figcaption></figure>
+    </div>
+    <div class="cta">
+      <a class="btn" href="files/Sales_Performance_Dashboard.pbix">Download Sales .pbix</a>
+      <a class="btn" href="files/Automation_Performance_Dashboard.pbix">Download Automation ROI .pbix</a>
     </div>
   </article>
 </section>
