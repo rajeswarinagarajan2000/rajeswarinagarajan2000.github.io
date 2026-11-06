@@ -202,6 +202,16 @@ footer a{color:var(--muted)}
 .suite b{font-family:var(--display)}
 .suite span{font-size:14px;color:var(--muted);line-height:1.5}
 @media (max-width:760px){.suite{grid-template-columns:minmax(0,1fr)}}
+
+.live{display:grid;gap:12px;border:1px solid var(--line);border-radius:12px;padding:14px;background:var(--surface)}
+.live-head{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.live-head b{display:flex;align-items:center;gap:8px;font-family:var(--display)}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--ok);box-shadow:0 0 0 4px var(--ok-soft)}
+.tabs{display:flex;gap:6px;flex-wrap:wrap}
+.tab{font:500 14px var(--body);padding:7px 12px;border-radius:7px;border:1px solid var(--line);background:var(--bg);color:var(--ink);cursor:pointer}
+.tab.on{background:var(--accent);border-color:var(--accent);color:var(--bg)}
+.live-frame{position:relative;aspect-ratio:16/9.6;border-radius:8px;overflow:hidden;border:1px solid var(--line);background:var(--bg)}
+.live-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 </style>
 </head>
 <body>
@@ -248,7 +258,7 @@ footer a{color:var(--muted)}
   <h2>Featured work</h2>
   <div class="cards">
     <a class="card" href="#p-allocation"><div class="ph">▶<em>Live demo video</em></div><div><small>Power Automate · Production</small><b>Allocation Automation System</b><span>Live since Jan 2026, 95% accuracy</span></div></a>
-    <a class="card" href="#p-sales"><img src="img/inventory-allocation.jpg" alt="" width="1600" height="932"><div><small>Power BI · Portfolio</small><b>Retail Analytics Suite</b><span>3 Power BI reports: sales, inventory allocation, automation ROI</span></div></a>
+    <a class="card" href="#p-sales"><img src="img/inventory-allocation.jpg" alt="" width="1600" height="932"><div><small>Power BI · Portfolio</small><b>Retail Analytics Suite</b><span>3 live Power BI reports: sales, inventory, automation ROI</span></div></a>
     <a class="card" href="#p-mbr"><img src="img/mbr-headcount.jpg" alt="" width="910" height="498"><div><small>Power BI · Production</small><b>MBR Executive Dashboard</b><span>4+ sources, adopted by senior management</span></div></a>
     <a class="card" href="#p-leave"><img src="img/leave-dashboard.jpg" alt="" width="1600" height="857"><div><small>Power Apps · Power Automate</small><b>Leave Management System</b><span>Role-based app with automated approvals</span></div></a>
     <a class="card" href="#p-m365"><img src="img/m365-uat-flow.jpg" alt="" width="797" height="587" style="object-position:top"><div><small>Power Automate · Microsoft 365</small><b>M365 Process Automation</b><span>Email routing, SharePoint filing, Teams alerts</span></div></a>
@@ -315,18 +325,37 @@ footer a{color:var(--muted)}
       <div class="p-meta">Independent project · Sep – Nov 2026</div>
     </div>
     <div class="tags"><span class="tag">Power BI</span><span class="tag">DAX</span><span class="tag">Power Query</span><span class="tag">Data modeling</span><span class="badge">Sample data</span></div>
-    <p>Three interactive Power BI reports built on a sample retail and automation dataset and published to Power BI Service. Together they follow the business end to end: what sold and against which target, whether stores had the right stock, and how much time the automations saved.</p>
+    <p>Three interactive Power BI reports built on a sample retail and automation dataset and published to the web, so you can use them live below. Together they follow the business end to end: what sold and against which target, whether stores had the right stock, and how much time the automations saved.</p>
     <div class="suite">
       <div><b>Sales Performance</b><span>Executive overview and Targets &amp; Customers pages: sales vs prior year and target, Target Status flag, segments, channels, product ranking</span></div>
       <div><b>Inventory Allocation</b><span>Units sold, closing stock, weeks of cover, sell-through, stockout rate, auto vs manual-override allocation and Allocation Accuracy % against a 95% target</span></div>
       <div><b>Automation Performance</b><span>Flow runs, success rate, failures by error category, hours and cost saved, FTE saved and cumulative ROI trend</span></div>
     </div>
     <p class="note">DAX: year-on-year and prior-year comparison, ranking, target gap and achievement, stockout and sell-through ratios, override multipliers and ROI calculations. Slicers for year, region, channel, allocation source, flow type and department.</p>
+    <div class="live">
+      <div class="live-head">
+        <b><span class="dot"></span>Live interactive reports</b>
+        <div class="tabs" role="tablist">
+          <button type="button" class="tab on" data-src="https://app.powerbi.com/view?r=eyJrIjoiM2JjOWYwMGEtMTQ0MC00ZjdiLTgzNWYtOWU4NjU5YmI5Y2Y5IiwidCI6ImRjMzgyZTVkLTUwZjUtNDQ5Ny1hN2U2LTAxY2QzMGUxNTkyNSJ9">Sales</button>
+          <button type="button" class="tab" data-src="https://app.powerbi.com/view?r=eyJrIjoiMjMwMTRhMDgtMmNjYi00MTcyLWE5YTUtYTVhZDFhZjJkM2U0IiwidCI6ImRjMzgyZTVkLTUwZjUtNDQ5Ny1hN2U2LTAxY2QzMGUxNTkyNSJ9">Inventory</button>
+          <button type="button" class="tab" data-src="https://app.powerbi.com/view?r=eyJrIjoiNzJmZTkwMzEtYjFiOS00MGM1LWIwNDktZTY0YWZiOTcyYzM1IiwidCI6ImRjMzgyZTVkLTUwZjUtNDQ5Ny1hN2U2LTAxY2QzMGUxNTkyNSJ9">Automation ROI</button>
+        </div>
+      </div>
+      <div class="live-frame"><iframe id="pbi" title="Live Power BI report" src="https://app.powerbi.com/view?r=eyJrIjoiM2JjOWYwMGEtMTQ0MC00ZjdiLTgzNWYtOWU4NjU5YmI5Y2Y5IiwidCI6ImRjMzgyZTVkLTUwZjUtNDQ5Ny1hN2U2LTAxY2QzMGUxNTkyNSJ9" allowfullscreen loading="lazy"></iframe></div>
+      <p class="note">Click the slicers to filter. Use the arrows at the bottom of the report to change pages.</p>
+    </div>
+    <details class="more"><summary>Show static screenshots</summary>
     <div class="shots">
       <figure class="shot wide"><a href="img/sales-exec-overview.jpg" target="_blank" rel="noopener"><img src="img/sales-exec-overview.jpg" width="1600" height="894" decoding="async" alt="Sales Performance: KPIs, YoY trend, store ranking, category split, product table, target gauge"></a><figcaption>Sales Performance: KPIs, YoY trend, store ranking, category split, product table, target gauge</figcaption></figure>
       <figure class="shot wide"><a href="img/sales-targets-customers.jpg" target="_blank" rel="noopener"><img src="img/sales-targets-customers.jpg" width="1600" height="886" decoding="async" alt="Targets &amp; Customers: sales vs target by region, achievement trend, segments, channel comparison"></a><figcaption>Targets &amp; Customers: sales vs target by region, achievement trend, segments, channel comparison</figcaption></figure>
       <figure class="shot wide"><a href="img/inventory-allocation.jpg" target="_blank" rel="noopener"><img src="img/inventory-allocation.jpg" width="1600" height="932" decoding="async" alt="Inventory Allocation and Stockouts dashboard"></a><figcaption>Inventory: Allocation &amp; Stockouts: stock cover, sell-through, auto vs manual-override stockouts, allocation accuracy</figcaption></figure>
       <figure class="shot wide"><a href="img/flow-roi.jpg" target="_blank" rel="noopener"><img src="img/flow-roi.jpg" width="1600" height="894" decoding="async" alt="Flow Performance &amp; ROI: runs, success rate, hours and cost saved, failures by error category"></a><figcaption>Flow Performance &amp; ROI: runs, success rate, hours and cost saved, failures by error category</figcaption></figure>
+    </div>
+    </details>
+    <div class="cta">
+      <a class="btn primary" href="https://app.powerbi.com/view?r=eyJrIjoiM2JjOWYwMGEtMTQ0MC00ZjdiLTgzNWYtOWU4NjU5YmI5Y2Y5IiwidCI6ImRjMzgyZTVkLTUwZjUtNDQ5Ny1hN2U2LTAxY2QzMGUxNTkyNSJ9" target="_blank" rel="noopener">Open Sales report ↗</a>
+      <a class="btn primary" href="https://app.powerbi.com/view?r=eyJrIjoiMjMwMTRhMDgtMmNjYi00MTcyLWE5YTUtYTVhZDFhZjJkM2U0IiwidCI6ImRjMzgyZTVkLTUwZjUtNDQ5Ny1hN2U2LTAxY2QzMGUxNTkyNSJ9" target="_blank" rel="noopener">Open Inventory report ↗</a>
+      <a class="btn primary" href="https://app.powerbi.com/view?r=eyJrIjoiNzJmZTkwMzEtYjFiOS00MGM1LWIwNDktZTY0YWZiOTcyYzM1IiwidCI6ImRjMzgyZTVkLTUwZjUtNDQ5Ny1hN2U2LTAxY2QzMGUxNTkyNSJ9" target="_blank" rel="noopener">Open Automation report ↗</a>
     </div>
     <div class="cta">
       <a class="btn" href="files/Sales_Performance_Dashboard.pbix">Sales .pbix</a>
@@ -404,6 +433,9 @@ document.getElementById('copy').addEventListener('click', function(){
   function sel(){var r=document.createRange();r.selectNodeContents(document.getElementById('email'));var s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent='Selected, press Ctrl+C';}
   try{navigator.clipboard.writeText(t).then(function(){b.textContent='Copied';setTimeout(function(){b.textContent='Copy email'},1800)},sel)}catch(e){sel()}
 });
+</script>
+<script>
+document.querySelectorAll('.tab').forEach(function(t){t.addEventListener('click',function(){document.querySelectorAll('.tab').forEach(function(x){x.classList.remove('on');x.setAttribute('aria-selected','false')});t.classList.add('on');t.setAttribute('aria-selected','true');document.getElementById('pbi').src=t.dataset.src;});});
 </script>
 </body>
 </html>
