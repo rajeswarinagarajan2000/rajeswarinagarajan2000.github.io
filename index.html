@@ -9,7 +9,7 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://rajeswarinagarajan2000.github.io/">
 <meta property="og:title" content="Rajeswari Nagarajan | Power Platform Developer &amp; Data Analyst">
-<meta property="og:description" content="Power Automate, Power BI and Power Apps projects: a 95%-accuracy allocation automation, an executive MBR dashboard, a leave management app and retail sales &amp; ROI dashboards.">
+<meta property="og:description" content="Power Automate, Power BI and Power Apps projects: a 95%-accuracy allocation automation, an executive MBR dashboard, a leave management app and a Power BI retail analytics suite.">
 <meta property="og:image" content="https://rajeswarinagarajan2000.github.io/img/sales-exec-overview.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231f5bd8'/%3E%3Ctext x='32' y='42' font-family='Arial' font-weight='700' font-size='28' fill='white' text-anchor='middle'%3ERN%3C/text%3E%3C/svg%3E">
@@ -194,6 +194,14 @@ footer a{color:var(--muted)}
 @media (max-width:900px){header.hero{grid-template-columns:minmax(0,1fr);gap:32px}.hero-shot img{transform:none}.cards{grid-template-columns:repeat(2,minmax(0,1fr))}.card,.card:nth-child(-n+2){grid-column:auto}.impact{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:560px){.cards,.skillgroups,.contact-grid{grid-template-columns:minmax(0,1fr)}}
 @media (prefers-reduced-motion:reduce){.hero-shot img,.card{transition:none;transform:none}}
+
+.id-row{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.avatar{width:84px;height:84px;border-radius:50%;object-fit:cover;border:3px solid var(--surface);box-shadow:0 0 0 1px var(--line),0 8px 20px -10px rgba(20,27,38,.5)}
+.suite{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.suite > div{display:grid;gap:6px;align-content:start;padding:16px;border:1px solid var(--line);border-radius:10px;background:var(--surface)}
+.suite b{font-family:var(--display)}
+.suite span{font-size:14px;color:var(--muted);line-height:1.5}
+@media (max-width:760px){.suite{grid-template-columns:minmax(0,1fr)}}
 </style>
 </head>
 <body>
@@ -212,7 +220,7 @@ footer a{color:var(--muted)}
 
 <header class="hero">
   <div class="hero-text">
-    <div class="status">Open to roles · Immediate joiner</div>
+    <div class="id-row"><img class="avatar" src="img/rajeswari.jpg" width="480" height="480" alt="Rajeswari Nagarajan"><div class="status">Open to roles · Immediate joiner</div></div>
     <h1>Rajeswari Nagarajan</h1>
     <p class="role-line"><span>Power Platform Developer</span> &amp; Data Analyst</p>
     <p class="lede">I automate manual business processes with Power Automate and turn operational data into Power BI dashboards that leaders use to make decisions.</p>
@@ -239,8 +247,8 @@ footer a{color:var(--muted)}
   <div class="label">At a glance</div>
   <h2>Featured work</h2>
   <div class="cards">
-    <a class="card" href="#p-allocation"><div class="ph">▶<em>Live demo video</em></div><div><small>Power Automate · Production</small><b>Allocation Automation System</b><span>Manual allocation automated end to end, 95% accuracy</span></div></a>
-    <a class="card" href="#p-sales"><img src="img/sales-targets-customers.jpg" alt="" width="1600" height="886"><div><small>Power BI · Portfolio</small><b>Retail Sales &amp; ROI Dashboards</b><span>3-page report with YoY, targets and flow ROI</span></div></a>
+    <a class="card" href="#p-allocation"><div class="ph">▶<em>Live demo video</em></div><div><small>Power Automate · Production</small><b>Allocation Automation System</b><span>Live since Jan 2026, 95% accuracy</span></div></a>
+    <a class="card" href="#p-sales"><img src="img/inventory-allocation.jpg" alt="" width="1600" height="932"><div><small>Power BI · Portfolio</small><b>Retail Analytics Suite</b><span>3 Power BI reports: sales, inventory allocation, automation ROI</span></div></a>
     <a class="card" href="#p-mbr"><img src="img/mbr-headcount.jpg" alt="" width="910" height="498"><div><small>Power BI · Production</small><b>MBR Executive Dashboard</b><span>4+ sources, adopted by senior management</span></div></a>
     <a class="card" href="#p-leave"><img src="img/leave-dashboard.jpg" alt="" width="1600" height="857"><div><small>Power Apps · Power Automate</small><b>Leave Management System</b><span>Role-based app with automated approvals</span></div></a>
     <a class="card" href="#p-m365"><img src="img/m365-uat-flow.jpg" alt="" width="797" height="587" style="object-position:top"><div><small>Power Automate · Microsoft 365</small><b>M365 Process Automation</b><span>Email routing, SharePoint filing, Teams alerts</span></div></a>
@@ -254,7 +262,7 @@ footer a{color:var(--muted)}
   <article class="project" id="p-allocation">
     <div class="p-head">
       <h3>Allocation Automation System</h3>
-      <div class="p-meta">Vision Group Retail · Dec 2025 – Mar 2026</div>
+      <div class="p-meta">Vision Group Retail · Built Apr – Dec 2025 · Live since Jan 2026</div>
     </div>
     <div class="tags"><span class="tag">Power Automate Cloud</span><span class="tag">Power Automate Desktop (RPA)</span><span class="tag">Excel</span><span class="tag">Outlook</span><span class="tag">Teams</span><span class="tag">SharePoint</span><span class="badge">Sole developer</span></div>
     <p>The allocation process was fully manual. I taught myself Power Automate and designed, built and deployed an end-to-end automated solution, the first of its kind at Vision Group. It connects Microsoft 365 apps for data flow, notifications and approvals, removing the manual handoffs between teams.</p>
@@ -302,19 +310,27 @@ footer a{color:var(--muted)}
 
   <article class="project" id="p-sales">
     <div class="p-head">
-      <h3>Retail Sales &amp; Automation ROI Dashboards</h3>
+      <h3>Retail Analytics Suite: Sales, Inventory &amp; Automation ROI</h3>
       <div class="p-meta">Independent project · Sep – Nov 2026</div>
     </div>
     <div class="tags"><span class="tag">Power BI</span><span class="tag">DAX</span><span class="tag">Power Query</span><span class="tag">Data modeling</span><span class="badge">Sample data</span></div>
-    <p>A three-page interactive Power BI report built on a sample retail and automation dataset. It covers sales against the prior year and targets, customer segments and channels, and the run health and ROI of Power Automate flows. The DAX includes year-on-year comparison, ranking, target gap and achievement, and ROI calculations, with slicers for year, region and channel.</p>
+    <p>Three interactive Power BI reports built on a sample retail and automation dataset and published to Power BI Service. Together they follow the business end to end: what sold and against which target, whether stores had the right stock, and how much time the automations saved.</p>
+    <div class="suite">
+      <div><b>Sales Performance</b><span>Executive overview and Targets &amp; Customers pages: sales vs prior year and target, Target Status flag, segments, channels, product ranking</span></div>
+      <div><b>Inventory Allocation</b><span>Units sold, closing stock, weeks of cover, sell-through, stockout rate, auto vs manual-override allocation and Allocation Accuracy % against a 95% target</span></div>
+      <div><b>Automation Performance</b><span>Flow runs, success rate, failures by error category, hours and cost saved, FTE saved and cumulative ROI trend</span></div>
+    </div>
+    <p class="note">DAX: year-on-year and prior-year comparison, ranking, target gap and achievement, stockout and sell-through ratios, override multipliers and ROI calculations. Slicers for year, region, channel, allocation source, flow type and department.</p>
     <div class="shots">
       <figure class="shot wide"><a href="img/sales-exec-overview.jpg" target="_blank" rel="noopener"><img src="img/sales-exec-overview.jpg" width="1600" height="894" decoding="async" alt="Sales Performance: KPIs, YoY trend, store ranking, category split, product table, target gauge"></a><figcaption>Sales Performance: KPIs, YoY trend, store ranking, category split, product table, target gauge</figcaption></figure>
       <figure class="shot wide"><a href="img/sales-targets-customers.jpg" target="_blank" rel="noopener"><img src="img/sales-targets-customers.jpg" width="1600" height="886" decoding="async" alt="Targets &amp; Customers: sales vs target by region, achievement trend, segments, channel comparison"></a><figcaption>Targets &amp; Customers: sales vs target by region, achievement trend, segments, channel comparison</figcaption></figure>
+      <figure class="shot wide"><a href="img/inventory-allocation.jpg" target="_blank" rel="noopener"><img src="img/inventory-allocation.jpg" width="1600" height="932" decoding="async" alt="Inventory Allocation and Stockouts dashboard"></a><figcaption>Inventory: Allocation &amp; Stockouts: stock cover, sell-through, auto vs manual-override stockouts, allocation accuracy</figcaption></figure>
       <figure class="shot wide"><a href="img/flow-roi.jpg" target="_blank" rel="noopener"><img src="img/flow-roi.jpg" width="1600" height="894" decoding="async" alt="Flow Performance &amp; ROI: runs, success rate, hours and cost saved, failures by error category"></a><figcaption>Flow Performance &amp; ROI: runs, success rate, hours and cost saved, failures by error category</figcaption></figure>
     </div>
     <div class="cta">
-      <a class="btn" href="files/Sales_Performance_Dashboard.pbix">Download Sales .pbix</a>
-      <a class="btn" href="files/Automation_Performance_Dashboard.pbix">Download Automation ROI .pbix</a>
+      <a class="btn" href="files/Sales_Performance_Dashboard.pbix">Sales .pbix</a>
+      <a class="btn" href="files/Inventory_Allocation_Dashboard.pbix">Inventory .pbix</a>
+      <a class="btn" href="files/Automation_Performance_Dashboard.pbix">Automation ROI .pbix</a>
     </div>
   </article>
 </section>
@@ -328,7 +344,7 @@ footer a{color:var(--muted)}
       <h3>Process Associate</h3>
       <div class="p-meta">Vision Group Retail · Chennai</div>
       <ul>
-        <li>Built and maintained Power Automate cloud and desktop automations, including the Allocation Automation System.</li>
+        <li>Built the Allocation Automation System (Apr – Dec 2025), live in production since January 2026, and maintained other Power Automate cloud and desktop flows.</li>
         <li>Created Power BI dashboards and data visualizations, including the MBR dashboard used by senior management.</li>
         <li>Checked AI model performance as part of client delivery.</li>
         <li>Worked with clients across the USA, APAC and LATAM, with Store 360 as the main client.</li>
