@@ -260,6 +260,7 @@ footer a{color:var(--muted)}
   <div class="cards">
     <a class="card" href="#p-allocation"><div class="ph">▶<em>Live demo video</em></div><div><small>Power Automate · Production</small><b>Allocation Automation System</b><span>Live since Jan 2026, 95% accuracy</span></div></a>
     <a class="card" href="#p-sales"><img src="img/inventory-allocation.jpg" alt="" width="1600" height="932"><div><small>Power BI · Portfolio</small><b>Retail Analytics Suite</b><span>3 live Power BI reports: sales, inventory, automation ROI</span></div></a>
+    <a class="card" href="#p-hr"><img src="img/hr-employees.jpg" alt="" width="1536" height="770"><div><small>Power Apps · Power Automate · AI Builder · Power BI</small><b>HR Operations Suite</b><span>One Dataverse model: app, flows, AI invoices, dashboard</span></div></a>
     <a class="card" href="#p-mbr"><img src="img/mbr-headcount.jpg" alt="" width="910" height="498"><div><small>Power BI · Production</small><b>MBR Executive Dashboard</b><span>4+ sources, adopted by senior management</span></div></a>
     <a class="card" href="#p-leave"><img src="img/leave-dashboard.jpg" alt="" width="1600" height="857"><div><small>Power Apps · Power Automate</small><b>Leave Management System</b><span>Role-based app with automated approvals</span></div></a>
     <a class="card" href="#p-m365"><img src="img/m365-uat-flow.jpg" alt="" width="797" height="587" style="object-position:top"><div><small>Power Automate · Microsoft 365</small><b>M365 Process Automation</b><span>Email routing, SharePoint filing, Teams alerts</span></div></a>
@@ -363,6 +364,23 @@ footer a{color:var(--muted)}
       <a class="btn" href="files/Inventory_Allocation_Dashboard.pbix">Inventory .pbix</a>
       <a class="btn" href="files/Automation_Performance_Dashboard.pbix">Automation ROI .pbix</a>
     </div>
+  </article>
+
+  <article class="project" id="p-hr">
+    <div class="p-head">
+      <h3>HR Operations Suite</h3>
+      <div class="p-meta">Independent project · Nov 2026</div>
+    </div>
+    <div class="tags"><span class="tag">Power Apps (Model-driven)</span><span class="tag">Dataverse</span><span class="tag">Power Automate</span><span class="tag">AI Builder</span><span class="tag">Power BI</span><span class="tag">DAX</span><span class="badge">Sample data</span></div>
+    <p>One connected HR and finance back office built on a single Dataverse data model, instead of separate demos. HR staff manage employees in a model-driven app, onboarding runs on its own, managers see live HR KPIs in Power BI, and supplier invoices are read by AI and routed for approval.</p>
+    <div class="suite">
+      <div><b>Employee Management</b><span>Model-driven app on 8 related Dataverse tables (employees, departments, job roles, locations, onboarding, vendors, invoices) with business rules and a custom security role</span></div>
+      <div><b>Automated Onboarding</b><span>3 Power Automate flows create each new hire's onboarding checklist from templates, track progress, and email overdue-task alerts</span></div>
+      <div><b>HR Performance Dashboard</b><span>Power BI on Dataverse: headcount, attrition %, new hires, onboarding progress and overdue tasks, built with DAX measures and a custom theme</span></div>
+      <div><b>AI Invoice Processing</b><span>AI Builder reads PDF invoices saved to OneDrive, matches or creates the vendor, saves the invoice, and sends low-confidence (under 80%) or high-value (over ₹50,000) invoices for approval</span></div>
+    </div>
+    <div class="shots"><figure class="shot"><a href="img/hr-employees.jpg" target="_blank" rel="noopener"><img src="img/hr-employees.jpg" width="1536" height="770" decoding="async" alt="HR Operations Hub model-driven app showing the employee list"></a><figcaption>HR Operations Hub: employee records with department, role, location and manager</figcaption></figure></div>
+    <p><b>Next:</b> a Copilot Studio employee help agent that answers HR questions from the same data (in progress).</p>
   </article>
 </section>
 
