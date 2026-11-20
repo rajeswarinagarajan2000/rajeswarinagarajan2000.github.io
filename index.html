@@ -146,7 +146,7 @@ footer{padding-block:32px;font-size:13px;color:var(--muted);border-top:1px solid
 .shots.one.narrow .shot img{max-width:460px}
 .shot img{aspect-ratio:auto}
 .video{position:relative;aspect-ratio:16/9;max-width:100%;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--surface)}
-.video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.video iframe,.video video{position:absolute;inset:0;width:100%;height:100%;border:0;background:#000}
 .vlink{font-size:14px}
 @media (max-width:760px){.shots{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:480px){.shots{grid-template-columns:minmax(0,1fr)}}
@@ -285,9 +285,9 @@ footer a{color:var(--muted)}
       <div class="kpi"><b>Jan 2026</b><span>live in production since</span></div>
     </div>
     <div class="video">
-      <iframe src="https://drive.google.com/file/d/1IVU4KNPNVNn2SbM0IXLFicoLe--SnCPg/preview" title="Allocation Automation live demo" allow="autoplay; fullscreen" allowfullscreen loading="lazy"></iframe>
+      <video controls preload="metadata" playsinline title="Allocation Automation live demo"><source src="files/allocation-demo.mp4" type="video/mp4">Your browser cannot play this video.</video>
     </div>
-    <p class="vlink"><a href="https://drive.google.com/file/d/1IVU4KNPNVNn2SbM0IXLFicoLe--SnCPg/view" target="_blank" rel="noopener">Watch the live demo on Google Drive</a></p>
+    <p class="vlink"><a href="files/allocation-demo.mp4" target="_blank" rel="noopener">Open the demo video in a new tab (10 min)</a></p>
   </article>
 
   <article class="project" id="p-mbr">
@@ -379,7 +379,8 @@ footer a{color:var(--muted)}
       <div><b>HR Performance Dashboard</b><span>Power BI on Dataverse: headcount, attrition %, new hires, onboarding progress and overdue tasks, built with DAX measures and a custom theme</span></div>
       <div><b>AI Invoice Processing</b><span>AI Builder reads PDF invoices saved to OneDrive, matches or creates the vendor, saves the invoice, and sends low-confidence (under 80%) or high-value (over ₹50,000) invoices for approval</span></div>
     </div>
-    <div class="shots"><figure class="shot"><a href="img/hr-employees.jpg" target="_blank" rel="noopener"><img src="img/hr-employees.jpg" width="1536" height="770" decoding="async" alt="HR Operations Hub model-driven app showing the employee list"></a><figcaption>HR Operations Hub: employee records with department, role, location and manager</figcaption></figure></div>
+    <div class="shots"><figure class="shot"><a href="img/hr-tables-1.jpg" target="_blank" rel="noopener"><img src="img/hr-tables-1.jpg" width="1150" height="762" loading="lazy" decoding="async" alt="Dataverse tables 1 of 2: Employees, Departments, Job Roles, Locations"></a><figcaption>Dataverse tables 1 of 2: Employees, Departments, Job Roles, Locations</figcaption></figure><figure class="shot"><a href="img/hr-tables-2.jpg" target="_blank" rel="noopener"><img src="img/hr-tables-2.jpg" width="1150" height="762" loading="lazy" decoding="async" alt="Dataverse tables 2 of 2: Onboarding Templates, Onboarding Tasks, Vendors, Invoices"></a><figcaption>Dataverse tables 2 of 2: Onboarding Templates, Onboarding Tasks, Vendors, Invoices</figcaption></figure></div>
+    <details class="more"><summary>Show all Power Automate flows (4)</summary><div class="shots"><figure class="shot"><a href="img/hr-flow-create-tasks.jpg" target="_blank" rel="noopener"><img src="img/hr-flow-create-tasks.jpg" width="1150" height="762" loading="lazy" decoding="async" alt="Flow 1 · Onboarding – Create Tasks: new hire added → task checklist built from templates → email sent"></a><figcaption>Flow 1 · Onboarding – Create Tasks: new hire added → task checklist built from templates → email sent</figcaption></figure><figure class="shot"><a href="img/hr-flow-mark-complete.jpg" target="_blank" rel="noopener"><img src="img/hr-flow-mark-complete.jpg" width="1150" height="762" loading="lazy" decoding="async" alt="Flow 2 · Onboarding – Mark Complete: task updated → checks open tasks → updates onboarding status"></a><figcaption>Flow 2 · Onboarding – Mark Complete: task updated → checks open tasks → updates onboarding status</figcaption></figure><figure class="shot"><a href="img/hr-flow-overdue-reminder.jpg" target="_blank" rel="noopener"><img src="img/hr-flow-overdue-reminder.jpg" width="1150" height="762" loading="lazy" decoding="async" alt="Flow 3 · Onboarding – Overdue Reminder: scheduled run → overdue tasks → HTML table email"></a><figcaption>Flow 3 · Onboarding – Overdue Reminder: scheduled run → overdue tasks → HTML table email</figcaption></figure><figure class="shot"><a href="img/hr-flow-invoice.jpg" target="_blank" rel="noopener"><img src="img/hr-flow-invoice.jpg" width="1150" height="762" loading="lazy" decoding="async" alt="Flow 4 · Invoice – Process with AI: AI Builder reads the PDF → vendor matched or created → invoice saved → approval if needed"></a><figcaption>Flow 4 · Invoice – Process with AI: AI Builder reads the PDF → vendor matched or created → invoice saved → approval if needed</figcaption></figure></div></details>
     <p><b>Next:</b> a Copilot Studio employee help agent that answers HR questions from the same data (in progress).</p>
   </article>
 </section>
