@@ -234,6 +234,12 @@ footer a{color:var(--muted)}
 .more-projects>summary{cursor:pointer;display:inline-block;margin:6px 0 28px;padding:10px 18px;border:1px solid var(--line);border-radius:10px;font-weight:600;list-style:none}
 .more-projects>summary::-webkit-details-marker{display:none}
 @media(max-width:820px){.cards{grid-template-columns:1fr!important}.split{grid-template-columns:1fr}}
+.four{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:18px}
+.four>div{border:1px solid var(--line);border-radius:12px;padding:18px;background:var(--surface)}
+.four b{display:block;font-size:1.05rem;margin-bottom:6px}.four span{color:var(--muted);font-size:.92rem;line-height:1.5}
+.cat{font-size:1.35rem;margin:36px 0 22px;padding-bottom:10px;border-bottom:1px solid var(--line)}.cat span{display:block;font-size:.9rem;font-weight:400;color:var(--muted);margin-top:4px}
+.xp-total{margin:10px 0}.handson{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}.handson span{border:1px solid var(--line);border-radius:999px;padding:6px 12px;font-size:.88rem}
+@media(max-width:820px){.four{grid-template-columns:1fr 1fr}}
 </style>
 </head>
 <body>
@@ -254,7 +260,7 @@ footer a{color:var(--muted)}
   <div class="hero-text">
     <div class="id-row"><img class="avatar" src="img/rajeswari.jpg" width="480" height="480" alt="Rajeswari Nagarajan"><div class="status">Open to roles · Immediate joiner</div></div>
     <h1>Rajeswari Nagarajan</h1>
-    <p class="role-line"><span>Power Platform Developer</span> &amp; Data Analyst</p>
+    <p class="role-line"><span>Power Platform Developer</span> | Power BI Developer | Automation Specialist</p>
     <p class="lede">I build business apps with Power Apps and Dataverse, automate manual processes with Power Automate, and turn operational data into Power BI dashboards that leaders use to make decisions.</p>
     <div class="cta">
       <a class="btn primary" href="#work">View my work</a>
@@ -275,6 +281,17 @@ footer a{color:var(--muted)}
   <div><b>3 regions</b><span>USA, APAC &amp; LATAM clients</span></div>
 </div>
 
+<section id="platform" class="index">
+  <div class="label">Core stack</div>
+  <h2>Microsoft Power Platform</h2>
+  <div class="four">
+    <div><b>Power Apps</b><span>Model-driven and canvas apps on Dataverse and SharePoint, business rules, role-based screens</span></div>
+    <div><b>Power Automate</b><span>Cloud flows, desktop RPA, approvals, scheduled jobs and AI Builder document processing</span></div>
+    <div><b>Power BI</b><span>DAX, Power Query, data modeling and live dashboards for management</span></div>
+    <div><b>Power Platform</b><span>Dataverse design, solutions, security roles, connection references and ALM</span></div>
+  </div>
+</section>
+
 <section id="work" class="index">
   <div class="label">At a glance</div>
   <h2>Featured work</h2>
@@ -291,6 +308,8 @@ footer a{color:var(--muted)}
 <section id="projects">
   <div class="label">Selected work</div>
   <h2>Project details</h2>
+
+  <h3 class="cat">Professional projects <span>Built during employment at Vision Group Retail</span></h3>
 
   <article class="project" id="p-allocation">
     <div class="split"><div class="txt">
@@ -311,6 +330,35 @@ footer a{color:var(--muted)}
     </div>
     <p class="vlink"><a href="files/allocation-demo.mp4" target="_blank" rel="noopener">Open the demo video in a new tab (10 min)</a></p></div></div>
   </article>
+
+  <details class="more-projects"><summary>+ Show 2 more professional projects (MBR Dashboard, M365 Automation)</summary>
+
+  <article class="project" id="p-mbr">
+    <div class="p-head">
+      <h3>MBR Executive Dashboard</h3>
+      <div class="p-meta">Vision Group Retail · Mar – Apr 2026</div>
+    </div>
+    <div class="tags"><span class="tag">Power BI</span><span class="tag">DAX</span><span class="tag">Power Query</span><span class="tag">Data modeling</span><span class="tag">Excel</span></div>
+    <p>An executive Monthly Business Review dashboard that brings data from 4+ sources into one reporting view. I built the DAX measures and Power Query transformations for KPI tracking, trend analysis and cross-unit comparison, and automated the refresh so the report no longer needs manual preparation. Senior management adopted it as their primary reporting tool.</p>
+    <details class="more"><summary>Show details and screenshots</summary>
+    <div class="shots one"><figure class="shot wide"><a href="img/mbr-headcount.jpg" target="_blank" rel="noopener"><img src="img/mbr-headcount.jpg" width="910" height="498" decoding="async" alt="Headcount utilization by subscene, dedicated vs non-dedicated model owners (client and staff names left out)"></a><figcaption>Headcount utilization by subscene, dedicated vs non-dedicated model owners (client and staff names left out)</figcaption></figure></div>
+  </details>
+  </article>
+
+  <article class="project" id="p-m365">
+    <div class="p-head">
+      <h3>Microsoft 365 Process Automation</h3>
+      <div class="p-meta">Vision Group Retail · Feb – Apr 2026</div>
+    </div>
+    <div class="tags"><span class="tag">Power Automate</span><span class="tag">Outlook</span><span class="tag">Teams</span><span class="tag">SharePoint</span><span class="tag">Excel</span></div>
+    <p>Several cloud flows that cut manual email handling. They route and respond to emails automatically and post Teams notifications as part of approval workflows. The flow below picks up UAT and ad-hoc request emails, files their attachments in a new SharePoint folder and notifies the team in Teams.</p>
+    <details class="more"><summary>Show details and screenshots</summary>
+    <div class="shots one narrow"><figure class="shot"><a href="img/m365-uat-flow.jpg" target="_blank" rel="noopener"><img src="img/m365-uat-flow.jpg" width="797" height="587" decoding="async" alt="UAT &amp; ad-hoc request flow: new email → SharePoint folder → loop over attachments → Teams message"></a><figcaption>UAT &amp; ad-hoc request flow: new email → SharePoint folder → loop over attachments → Teams message</figcaption></figure></div>
+  </details>
+  </article>
+  </details>
+
+  <h3 class="cat">Personal projects <span>Independent portfolio projects built on sample data</span></h3>
 
   <article class="project" id="p-hr">
     <div class="split"><div class="txt">
@@ -391,31 +439,7 @@ footer a{color:var(--muted)}
     </div>
   </article>
 
-  <details class="more-projects"><summary>+ Show 3 more projects (MBR Dashboard, M365 Automation, Leave Management)</summary>
-
-  <article class="project" id="p-mbr">
-    <div class="p-head">
-      <h3>MBR Executive Dashboard</h3>
-      <div class="p-meta">Vision Group Retail · Mar – Apr 2026</div>
-    </div>
-    <div class="tags"><span class="tag">Power BI</span><span class="tag">DAX</span><span class="tag">Power Query</span><span class="tag">Data modeling</span><span class="tag">Excel</span></div>
-    <p>An executive Monthly Business Review dashboard that brings data from 4+ sources into one reporting view. I built the DAX measures and Power Query transformations for KPI tracking, trend analysis and cross-unit comparison, and automated the refresh so the report no longer needs manual preparation. Senior management adopted it as their primary reporting tool.</p>
-    <details class="more"><summary>Show details and screenshots</summary>
-    <div class="shots one"><figure class="shot wide"><a href="img/mbr-headcount.jpg" target="_blank" rel="noopener"><img src="img/mbr-headcount.jpg" width="910" height="498" decoding="async" alt="Headcount utilization by subscene, dedicated vs non-dedicated model owners (client and staff names left out)"></a><figcaption>Headcount utilization by subscene, dedicated vs non-dedicated model owners (client and staff names left out)</figcaption></figure></div>
-  </details>
-  </article>
-
-  <article class="project" id="p-m365">
-    <div class="p-head">
-      <h3>Microsoft 365 Process Automation</h3>
-      <div class="p-meta">Vision Group Retail · Feb – Apr 2026</div>
-    </div>
-    <div class="tags"><span class="tag">Power Automate</span><span class="tag">Outlook</span><span class="tag">Teams</span><span class="tag">SharePoint</span><span class="tag">Excel</span></div>
-    <p>Several cloud flows that cut manual email handling. They route and respond to emails automatically and post Teams notifications as part of approval workflows. The flow below picks up UAT and ad-hoc request emails, files their attachments in a new SharePoint folder and notifies the team in Teams.</p>
-    <details class="more"><summary>Show details and screenshots</summary>
-    <div class="shots one narrow"><figure class="shot"><a href="img/m365-uat-flow.jpg" target="_blank" rel="noopener"><img src="img/m365-uat-flow.jpg" width="797" height="587" decoding="async" alt="UAT &amp; ad-hoc request flow: new email → SharePoint folder → loop over attachments → Teams message"></a><figcaption>UAT &amp; ad-hoc request flow: new email → SharePoint folder → loop over attachments → Teams message</figcaption></figure></div>
-  </details>
-  </article>
+  <details class="more-projects"><summary>+ Show 1 more personal project (Leave Management)</summary>
 
   <article class="project" id="p-leave">
     <div class="p-head">
@@ -441,12 +465,13 @@ footer a{color:var(--muted)}
     <div>
       <h3>Process Associate</h3>
       <div class="p-meta">Vision Group Retail · Nagercoil</div>
+      <p class="xp-total"><b>3.6+ years</b> of professional experience</p>
       <ul>
-        <li>Built the Allocation Automation System (Apr – Dec 2025), live in production since January 2026, and maintained other Power Automate cloud and desktop flows.</li>
-        <li>Created Power BI dashboards and data visualizations, including the MBR dashboard used by senior management.</li>
-        <li>Checked AI model performance as part of client delivery.</li>
-        <li>Worked with clients across the USA, APAC and LATAM, with Store 360 as the main client.</li>
+        <li><b>Process Operations &amp; Data Validation:</b> data checks, quality audits and AI model performance checking for USA, APAC and LATAM clients (main client: Store 360).</li>
+        <li><b>Power Automate Development:</b> built the Allocation Automation System (Apr – Dec 2025), live in production since January 2026, plus other cloud and desktop flows.</li>
+        <li><b>Power BI Reporting &amp; Analytics:</b> built the MBR dashboard used by senior management, plus MIS reports.</li>
       </ul>
+      <div class="handson"><span><b>Power Automate</b> 2 yrs</span><span><b>Power BI</b> 2 yrs</span><span><b>Excel &amp; Macros</b> 2 yrs</span><span><b>SQL</b> 6 months</span><span><b>Power Apps &amp; Dataverse</b> 6 months</span><span><b>Process operations</b> 3.6 yrs</span></div>
     </div>
   </div>
 </section>
@@ -475,6 +500,17 @@ footer a{color:var(--muted)}
     <div class="item"><div><b>SQL for Data Management Using AI</b><div class="sub">be10X · AI Career Accelerator Program</div></div><div class="yr">Jul 2026</div></div>
     <div class="item"><div><b>AI Fundamentals &amp; Ecosystem Mastery</b><div class="sub">be10X</div></div><div class="yr">Jul 2026</div></div>
     <div class="item"><div><b>AI and ML for Business Applications</b><div class="sub">Alison</div></div><div class="yr"></div></div>
+  </div>
+</section>
+
+<section id="why">
+  <div class="label">Why hire me</div>
+  <h2>What I bring</h2>
+  <div class="four">
+    <div><b>Process automation</b><span>Practical, production experience automating real business processes with Power Automate</span></div>
+    <div><b>Data to decisions</b><span>Turning business data into clear Power BI dashboards that managers actually use</span></div>
+    <div><b>Business understanding</b><span>I start from the requirement and the process, then improve it, not just the tool</span></div>
+    <div><b>End-to-end builds</b><span>Apps, flows, data and reports built together on Microsoft Power Platform</span></div>
   </div>
 </section>
 
