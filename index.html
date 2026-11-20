@@ -219,6 +219,15 @@ footer a{color:var(--muted)}
 .cards .card{grid-column:auto!important;grid-row:auto!important}
 .cards .card img,.cards .card .ph{height:130px!important;min-height:0!important;aspect-ratio:auto!important;object-fit:cover;object-position:top}
 .split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:28px;align-items:start}
+.split .txt>*+*{margin-top:16px!important}
+.split .txt .tags{margin-top:14px!important}
+.split .kpis{margin-top:22px!important}
+.split{margin-bottom:8px}
+.cta{display:flex!important;flex-wrap:wrap;gap:12px!important;margin-top:18px!important}
+.media .cta .btn{white-space:nowrap}
+.inside .suite{display:grid!important;grid-template-columns:repeat(auto-fit,minmax(210px,1fr))!important;gap:14px!important;margin-top:14px}
+.inside .note{margin-top:14px}
+.project{padding-bottom:44px!important;margin-bottom:44px!important}
 .split .kpis{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 24px}
 .split .media>*:first-child{margin-top:0}
 #p-allocation .video{max-width:none!important}
@@ -311,12 +320,7 @@ footer a{color:var(--muted)}
     </div>
     <div class="tags"><span class="tag">Power Apps (Model-driven)</span><span class="tag">Dataverse</span><span class="tag">Power Automate</span><span class="tag">AI Builder</span><span class="tag">Power BI</span><span class="tag">DAX</span><span class="badge">Sample data</span></div>
     <p>One connected HR and finance back office built on a single Dataverse data model, instead of separate demos. HR staff manage employees in a model-driven app, onboarding runs on its own, managers see live HR KPIs in Power BI, and supplier invoices are read by AI and routed for approval.</p>
-    <div class="suite">
-      <div><b>Employee Management</b><span>Model-driven app on 8 related Dataverse tables (employees, departments, job roles, locations, onboarding, vendors, invoices) with business rules and a custom security role</span></div>
-      <div><b>Automated Onboarding</b><span>3 Power Automate flows create each new hire's onboarding checklist from templates, track progress, and email overdue-task alerts</span></div>
-      <div><b>HR Performance Dashboard</b><span>Power BI on Dataverse: headcount, attrition %, new hires, onboarding progress and overdue tasks, built with DAX measures and a custom theme</span></div>
-      <div><b>AI Invoice Processing</b><span>AI Builder reads PDF invoices saved to OneDrive, matches or creates the vendor, saves the invoice, and sends low-confidence (under 80%) or high-value (over ₹50,000) invoices for approval</span></div>
-    </div>
+    
     </div><div class="media"><div class="live">
       <div class="live-head">
         <b><span class="dot"></span>Live HR dashboard (Power BI)</b>
@@ -328,6 +332,12 @@ footer a{color:var(--muted)}
       <a class="btn primary" href="https://app.powerbi.com/view?r=eyJrIjoiMWE5MDgwYWYtNzI1My00MjNlLTljMzUtNjdhYjk2ZjQ5YmI4IiwidCI6ImRjMzgyZTVkLTUwZjUtNDQ5Ny1hN2U2LTAxY2QzMGUxNTkyNSJ9" target="_blank" rel="noopener">Open HR dashboard ↗</a>
       <a class="btn" href="https://github.com/rajeswarinagarajan2000/hr-operations-suite" target="_blank" rel="noopener">GitHub repo ↗</a>
     </div></div></div>
+    <details class="more inside" open><summary>See what's inside</summary><div class="suite">
+      <div><b>Employee Management</b><span>Model-driven app on 8 related Dataverse tables (employees, departments, job roles, locations, onboarding, vendors, invoices) with business rules and a custom security role</span></div>
+      <div><b>Automated Onboarding</b><span>3 Power Automate flows create each new hire's onboarding checklist from templates, track progress, and email overdue-task alerts</span></div>
+      <div><b>HR Performance Dashboard</b><span>Power BI on Dataverse: headcount, attrition %, new hires, onboarding progress and overdue tasks, built with DAX measures and a custom theme</span></div>
+      <div><b>AI Invoice Processing</b><span>AI Builder reads PDF invoices saved to OneDrive, matches or creates the vendor, saves the invoice, and sends low-confidence (under 80%) or high-value (over ₹50,000) invoices for approval</span></div>
+    </div></details>
     <details class="more"><summary>Show Dataverse tables and Power Automate flows (6 pictures)</summary><div class="shots"><figure class="shot"><a href="img/hr-tables-1.jpg" target="_blank" rel="noopener"><img src="img/hr-tables-1.jpg" width="1150" height="762" loading="lazy" decoding="async" alt="Dataverse tables 1 of 2: Employees, Departments, Job Roles, Locations"></a><figcaption>Dataverse tables 1 of 2: Employees, Departments, Job Roles, Locations</figcaption></figure><figure class="shot"><a href="img/hr-tables-2.jpg" target="_blank" rel="noopener"><img src="img/hr-tables-2.jpg" width="1150" height="762" loading="lazy" decoding="async" alt="Dataverse tables 2 of 2: Onboarding Templates, Onboarding Tasks, Vendors, Invoices"></a><figcaption>Dataverse tables 2 of 2: Onboarding Templates, Onboarding Tasks, Vendors, Invoices</figcaption></figure></div>
     <details class="more"><summary>Show all Power Automate flows (4)</summary><div class="shots"><figure class="shot"><a href="img/hr-flow-create-tasks.jpg" target="_blank" rel="noopener"><img src="img/hr-flow-create-tasks.jpg" width="1150" height="762" loading="lazy" decoding="async" alt="Flow 1 · Onboarding – Create Tasks: new hire added → task checklist built from templates → email sent"></a><figcaption>Flow 1 · Onboarding – Create Tasks: new hire added → task checklist built from templates → email sent</figcaption></figure><figure class="shot"><a href="img/hr-flow-mark-complete.jpg" target="_blank" rel="noopener"><img src="img/hr-flow-mark-complete.jpg" width="1150" height="762" loading="lazy" decoding="async" alt="Flow 2 · Onboarding – Mark Complete: task updated → checks open tasks → updates onboarding status"></a><figcaption>Flow 2 · Onboarding – Mark Complete: task updated → checks open tasks → updates onboarding status</figcaption></figure><figure class="shot"><a href="img/hr-flow-overdue-reminder.jpg" target="_blank" rel="noopener"><img src="img/hr-flow-overdue-reminder.jpg" width="1150" height="762" loading="lazy" decoding="async" alt="Flow 3 · Onboarding – Overdue Reminder: scheduled run → overdue tasks → HTML table email"></a><figcaption>Flow 3 · Onboarding – Overdue Reminder: scheduled run → overdue tasks → HTML table email</figcaption></figure><figure class="shot"><a href="img/hr-flow-invoice.jpg" target="_blank" rel="noopener"><img src="img/hr-flow-invoice.jpg" width="1150" height="762" loading="lazy" decoding="async" alt="Flow 4 · Invoice – Process with AI: AI Builder reads the PDF → vendor matched or created → invoice saved → approval if needed"></a><figcaption>Flow 4 · Invoice – Process with AI: AI Builder reads the PDF → vendor matched or created → invoice saved → approval if needed</figcaption></figure></div></details></details>
     <p><b>Next:</b> a Copilot Studio employee help agent that answers HR questions from the same data (in progress).</p>
@@ -341,12 +351,7 @@ footer a{color:var(--muted)}
     </div>
     <div class="tags"><span class="tag">Power BI</span><span class="tag">DAX</span><span class="tag">Power Query</span><span class="tag">Data modeling</span><span class="badge">Sample data</span></div>
     <p>Three interactive Power BI reports built on a sample retail and automation dataset and published to the web, so you can use them live below. Together they follow the business end to end: what sold and against which target, whether stores had the right stock, and how much time the automations saved.</p>
-    <div class="suite">
-      <div><b>Sales Performance</b><span>Executive overview and Targets &amp; Customers pages: sales vs prior year and target, Target Status flag, segments, channels, product ranking</span></div>
-      <div><b>Inventory Allocation</b><span>Units sold, closing stock, weeks of cover, sell-through, stockout rate, auto vs manual-override allocation and Allocation Accuracy % against a 95% target</span></div>
-      <div><b>Automation Performance</b><span>Flow runs, success rate, failures by error category, hours and cost saved, FTE saved and cumulative ROI trend</span></div>
-    </div>
-    <p class="note">DAX: year-on-year and prior-year comparison, ranking, target gap and achievement, stockout and sell-through ratios, override multipliers and ROI calculations. Slicers for year, region, channel, allocation source, flow type and department.</p>
+    
     </div><div class="media"><div class="live">
       <div class="live-head">
         <b><span class="dot"></span>Live interactive reports</b>
@@ -359,6 +364,12 @@ footer a{color:var(--muted)}
       <div class="live-frame"><iframe id="pbi" title="Live Power BI report" src="https://app.powerbi.com/view?r=eyJrIjoiM2JjOWYwMGEtMTQ0MC00ZjdiLTgzNWYtOWU4NjU5YmI5Y2Y5IiwidCI6ImRjMzgyZTVkLTUwZjUtNDQ5Ny1hN2U2LTAxY2QzMGUxNTkyNSJ9" allowfullscreen loading="lazy"></iframe></div>
       <p class="note">Click the slicers to filter. Use the arrows at the bottom of the report to change pages.</p>
     </div></div></div>
+    <details class="more inside" open><summary>See what's inside</summary><div class="suite">
+      <div><b>Sales Performance</b><span>Executive overview and Targets &amp; Customers pages: sales vs prior year and target, Target Status flag, segments, channels, product ranking</span></div>
+      <div><b>Inventory Allocation</b><span>Units sold, closing stock, weeks of cover, sell-through, stockout rate, auto vs manual-override allocation and Allocation Accuracy % against a 95% target</span></div>
+      <div><b>Automation Performance</b><span>Flow runs, success rate, failures by error category, hours and cost saved, FTE saved and cumulative ROI trend</span></div>
+    </div>
+    <p class="note">DAX: year-on-year and prior-year comparison, ranking, target gap and achievement, stockout and sell-through ratios, override multipliers and ROI calculations. Slicers for year, region, channel, allocation source, flow type and department.</p></details>
     <details class="more"><summary>Show static screenshots</summary>
     <div class="shots">
       <figure class="shot wide"><a href="img/sales-exec-overview.jpg" target="_blank" rel="noopener"><img src="img/sales-exec-overview.jpg" width="1600" height="894" decoding="async" alt="Sales Performance: KPIs, YoY trend, store ranking, category split, product table, target gauge"></a><figcaption>Sales Performance: KPIs, YoY trend, store ranking, category split, product table, target gauge</figcaption></figure>
