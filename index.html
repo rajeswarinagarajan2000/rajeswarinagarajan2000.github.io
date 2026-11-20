@@ -146,6 +146,7 @@ footer{padding-block:32px;font-size:13px;color:var(--muted);border-top:1px solid
 .shots.one.narrow .shot img{max-width:460px}
 .shot img{aspect-ratio:auto}
 .video{position:relative;aspect-ratio:16/9;max-width:100%;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--surface)}
+.live-frame{position:relative}
 .video iframe,.video video{position:absolute;inset:0;width:100%;height:100%;border:0;background:#000}
 .vlink{font-size:14px}
 @media (max-width:760px){.shots{grid-template-columns:repeat(2,minmax(0,1fr))}}
@@ -290,35 +291,33 @@ footer a{color:var(--muted)}
     <p class="vlink"><a href="files/allocation-demo.mp4" target="_blank" rel="noopener">Open the demo video in a new tab (10 min)</a></p>
   </article>
 
-  <article class="project" id="p-mbr">
+  <article class="project" id="p-hr">
     <div class="p-head">
-      <h3>MBR Executive Dashboard</h3>
-      <div class="p-meta">Vision Group Retail · Mar – Apr 2026</div>
+      <h3>HR Operations Suite</h3>
+      <div class="p-meta">Independent project · Nov 2026</div>
     </div>
-    <div class="tags"><span class="tag">Power BI</span><span class="tag">DAX</span><span class="tag">Power Query</span><span class="tag">Data modeling</span><span class="tag">Excel</span></div>
-    <p>An executive Monthly Business Review dashboard that brings data from 4+ sources into one reporting view. I built the DAX measures and Power Query transformations for KPI tracking, trend analysis and cross-unit comparison, and automated the refresh so the report no longer needs manual preparation. Senior management adopted it as their primary reporting tool.</p>
-    <div class="shots one"><figure class="shot wide"><a href="img/mbr-headcount.jpg" target="_blank" rel="noopener"><img src="img/mbr-headcount.jpg" width="910" height="498" decoding="async" alt="Headcount utilization by subscene, dedicated vs non-dedicated model owners (client and staff names left out)"></a><figcaption>Headcount utilization by subscene, dedicated vs non-dedicated model owners (client and staff names left out)</figcaption></figure></div>
-  </article>
-
-  <article class="project" id="p-m365">
-    <div class="p-head">
-      <h3>Microsoft 365 Process Automation</h3>
-      <div class="p-meta">Vision Group Retail · Feb – Apr 2026</div>
+    <div class="tags"><span class="tag">Power Apps (Model-driven)</span><span class="tag">Dataverse</span><span class="tag">Power Automate</span><span class="tag">AI Builder</span><span class="tag">Power BI</span><span class="tag">DAX</span><span class="badge">Sample data</span></div>
+    <p>One connected HR and finance back office built on a single Dataverse data model, instead of separate demos. HR staff manage employees in a model-driven app, onboarding runs on its own, managers see live HR KPIs in Power BI, and supplier invoices are read by AI and routed for approval.</p>
+    <div class="suite">
+      <div><b>Employee Management</b><span>Model-driven app on 8 related Dataverse tables (employees, departments, job roles, locations, onboarding, vendors, invoices) with business rules and a custom security role</span></div>
+      <div><b>Automated Onboarding</b><span>3 Power Automate flows create each new hire's onboarding checklist from templates, track progress, and email overdue-task alerts</span></div>
+      <div><b>HR Performance Dashboard</b><span>Power BI on Dataverse: headcount, attrition %, new hires, onboarding progress and overdue tasks, built with DAX measures and a custom theme</span></div>
+      <div><b>AI Invoice Processing</b><span>AI Builder reads PDF invoices saved to OneDrive, matches or creates the vendor, saves the invoice, and sends low-confidence (under 80%) or high-value (over ₹50,000) invoices for approval</span></div>
     </div>
-    <div class="tags"><span class="tag">Power Automate</span><span class="tag">Outlook</span><span class="tag">Teams</span><span class="tag">SharePoint</span><span class="tag">Excel</span></div>
-    <p>Several cloud flows that cut manual email handling. They route and respond to emails automatically and post Teams notifications as part of approval workflows. The flow below picks up UAT and ad-hoc request emails, files their attachments in a new SharePoint folder and notifies the team in Teams.</p>
-    <div class="shots one narrow"><figure class="shot"><a href="img/m365-uat-flow.jpg" target="_blank" rel="noopener"><img src="img/m365-uat-flow.jpg" width="797" height="587" decoding="async" alt="UAT &amp; ad-hoc request flow: new email → SharePoint folder → loop over attachments → Teams message"></a><figcaption>UAT &amp; ad-hoc request flow: new email → SharePoint folder → loop over attachments → Teams message</figcaption></figure></div>
-  </article>
-
-  <article class="project" id="p-leave">
-    <div class="p-head">
-      <h3>Leave Management System</h3>
-      <div class="p-meta">Self-initiated · Jul – Oct 2026</div>
+    <div class="live">
+      <div class="live-head">
+        <b><span class="dot"></span>Live HR dashboard (Power BI)</b>
+      </div>
+      <div class="live-frame"><button type="button" class="btn primary loadpbi" style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:2">▶ Load live report</button><iframe title="Live HR Operations Power BI dashboard" data-src="https://app.powerbi.com/view?r=eyJrIjoiMWE5MDgwYWYtNzI1My00MjNlLTljMzUtNjdhYjk2ZjQ5YmI4IiwidCI6ImRjMzgyZTVkLTUwZjUtNDQ5Ny1hN2U2LTAxY2QzMGUxNTkyNSJ9" allowfullscreen loading="lazy"></iframe></div>
+      <p class="note">Headcount, attrition, new hires and onboarding progress. Click the slicers to filter and use the arrows at the bottom to change pages.</p>
     </div>
-    <div class="tags"><span class="tag">Power Apps (Canvas)</span><span class="tag">Power Fx</span><span class="tag">Power Automate</span><span class="tag">SharePoint Lists</span><span class="tag">Outlook</span></div>
-    <p>An end-to-end leave system on the Power Platform. Employees and managers log in to separate, role-based screens. Employees submit Casual, Earned or Permission leave with the total days calculated automatically. A Power Automate flow emails the manager the moment a request is created, and the manager approves or rejects it in one click. A dashboard tracks totals and colour-coded status.</p>
-    <div class="shots"><figure class="shot"><a href="img/leave-request.jpg" target="_blank" rel="noopener"><img src="img/leave-request.jpg" width="1600" height="814" decoding="async" alt="New leave request with auto-calculated days"></a><figcaption>New leave request with auto-calculated days</figcaption></figure><figure class="shot"><a href="img/leave-pending.jpg" target="_blank" rel="noopener"><img src="img/leave-pending.jpg" width="1600" height="849" decoding="async" alt="Manager queue with one-click Approve / Reject"></a><figcaption>Manager queue with one-click Approve / Reject</figcaption></figure><figure class="shot"><a href="img/leave-dashboard.jpg" target="_blank" rel="noopener"><img src="img/leave-dashboard.jpg" width="1600" height="857" decoding="async" alt="Leave dashboard with KPI cards and status history"></a><figcaption>Leave dashboard with KPI cards and status history</figcaption></figure></div>
-    <details class="more"><summary>Show all screens (login, confirmation, manager email, approval, flow, run history)</summary><div class="shots"><figure class="shot"><a href="img/leave-login.jpg" target="_blank" rel="noopener"><img src="img/leave-login.jpg" width="1600" height="785" decoding="async" alt="Employee login, with a separate manager login"></a><figcaption>Employee login, with a separate manager login</figcaption></figure><figure class="shot"><a href="img/leave-submitted.jpg" target="_blank" rel="noopener"><img src="img/leave-submitted.jpg" width="1600" height="857" decoding="async" alt="Confirmation screen after submitting"></a><figcaption>Confirmation screen after submitting</figcaption></figure><figure class="shot"><a href="img/leave-email.jpg" target="_blank" rel="noopener"><img src="img/leave-email.jpg" width="1112" height="460" decoding="async" alt="Email the flow sends to the manager"></a><figcaption>Email the flow sends to the manager</figcaption></figure><figure class="shot"><a href="img/leave-approved.jpg" target="_blank" rel="noopener"><img src="img/leave-approved.jpg" width="1600" height="861" decoding="async" alt="Approval confirmation"></a><figcaption>Approval confirmation</figcaption></figure><figure class="shot"><a href="img/leave-flow.jpg" target="_blank" rel="noopener"><img src="img/leave-flow.jpg" width="1495" height="897" decoding="async" alt="Flow: SharePoint item created → send email"></a><figcaption>Flow: SharePoint item created → send email</figcaption></figure><figure class="shot"><a href="img/leave-run-history.jpg" target="_blank" rel="noopener"><img src="img/leave-run-history.jpg" width="1600" height="529" decoding="async" alt="Flow run history"></a><figcaption>Flow run history</figcaption></figure></div></details>
+    <div class="cta">
+      <a class="btn primary" href="https://app.powerbi.com/view?r=eyJrIjoiMWE5MDgwYWYtNzI1My00MjNlLTljMzUtNjdhYjk2ZjQ5YmI4IiwidCI6ImRjMzgyZTVkLTUwZjUtNDQ5Ny1hN2U2LTAxY2QzMGUxNTkyNSJ9" target="_blank" rel="noopener">Open HR dashboard ↗</a>
+      <a class="btn" href="https://github.com/rajeswarinagarajan2000/hr-operations-suite" target="_blank" rel="noopener">GitHub repo ↗</a>
+    </div>
+    <details class="more"><summary>Show Dataverse tables and Power Automate flows (6 pictures)</summary><div class="shots"><figure class="shot"><a href="img/hr-tables-1.jpg" target="_blank" rel="noopener"><img src="img/hr-tables-1.jpg" width="1150" height="762" loading="lazy" decoding="async" alt="Dataverse tables 1 of 2: Employees, Departments, Job Roles, Locations"></a><figcaption>Dataverse tables 1 of 2: Employees, Departments, Job Roles, Locations</figcaption></figure><figure class="shot"><a href="img/hr-tables-2.jpg" target="_blank" rel="noopener"><img src="img/hr-tables-2.jpg" width="1150" height="762" loading="lazy" decoding="async" alt="Dataverse tables 2 of 2: Onboarding Templates, Onboarding Tasks, Vendors, Invoices"></a><figcaption>Dataverse tables 2 of 2: Onboarding Templates, Onboarding Tasks, Vendors, Invoices</figcaption></figure></div>
+    <details class="more"><summary>Show all Power Automate flows (4)</summary><div class="shots"><figure class="shot"><a href="img/hr-flow-create-tasks.jpg" target="_blank" rel="noopener"><img src="img/hr-flow-create-tasks.jpg" width="1150" height="762" loading="lazy" decoding="async" alt="Flow 1 · Onboarding – Create Tasks: new hire added → task checklist built from templates → email sent"></a><figcaption>Flow 1 · Onboarding – Create Tasks: new hire added → task checklist built from templates → email sent</figcaption></figure><figure class="shot"><a href="img/hr-flow-mark-complete.jpg" target="_blank" rel="noopener"><img src="img/hr-flow-mark-complete.jpg" width="1150" height="762" loading="lazy" decoding="async" alt="Flow 2 · Onboarding – Mark Complete: task updated → checks open tasks → updates onboarding status"></a><figcaption>Flow 2 · Onboarding – Mark Complete: task updated → checks open tasks → updates onboarding status</figcaption></figure><figure class="shot"><a href="img/hr-flow-overdue-reminder.jpg" target="_blank" rel="noopener"><img src="img/hr-flow-overdue-reminder.jpg" width="1150" height="762" loading="lazy" decoding="async" alt="Flow 3 · Onboarding – Overdue Reminder: scheduled run → overdue tasks → HTML table email"></a><figcaption>Flow 3 · Onboarding – Overdue Reminder: scheduled run → overdue tasks → HTML table email</figcaption></figure><figure class="shot"><a href="img/hr-flow-invoice.jpg" target="_blank" rel="noopener"><img src="img/hr-flow-invoice.jpg" width="1150" height="762" loading="lazy" decoding="async" alt="Flow 4 · Invoice – Process with AI: AI Builder reads the PDF → vendor matched or created → invoice saved → approval if needed"></a><figcaption>Flow 4 · Invoice – Process with AI: AI Builder reads the PDF → vendor matched or created → invoice saved → approval if needed</figcaption></figure></div></details></details>
+    <p><b>Next:</b> a Copilot Studio employee help agent that answers HR questions from the same data (in progress).</p>
   </article>
 
   <article class="project" id="p-sales">
@@ -343,7 +342,7 @@ footer a{color:var(--muted)}
           <button type="button" class="tab" data-src="https://app.powerbi.com/view?r=eyJrIjoiNzJmZTkwMzEtYjFiOS00MGM1LWIwNDktZTY0YWZiOTcyYzM1IiwidCI6ImRjMzgyZTVkLTUwZjUtNDQ5Ny1hN2U2LTAxY2QzMGUxNTkyNSJ9">Automation ROI</button>
         </div>
       </div>
-      <div class="live-frame"><iframe id="pbi" title="Live Power BI report" src="https://app.powerbi.com/view?r=eyJrIjoiM2JjOWYwMGEtMTQ0MC00ZjdiLTgzNWYtOWU4NjU5YmI5Y2Y5IiwidCI6ImRjMzgyZTVkLTUwZjUtNDQ5Ny1hN2U2LTAxY2QzMGUxNTkyNSJ9" allowfullscreen loading="lazy"></iframe></div>
+      <div class="live-frame"><button type="button" class="btn primary loadpbi" style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:2">▶ Load live report</button><iframe id="pbi" title="Live Power BI report" data-src="https://app.powerbi.com/view?r=eyJrIjoiM2JjOWYwMGEtMTQ0MC00ZjdiLTgzNWYtOWU4NjU5YmI5Y2Y5IiwidCI6ImRjMzgyZTVkLTUwZjUtNDQ5Ny1hN2U2LTAxY2QzMGUxNTkyNSJ9" allowfullscreen loading="lazy"></iframe></div>
       <p class="note">Click the slicers to filter. Use the arrows at the bottom of the report to change pages.</p>
     </div>
     <details class="more"><summary>Show static screenshots</summary>
@@ -360,38 +359,49 @@ footer a{color:var(--muted)}
       <a class="btn primary" href="https://app.powerbi.com/view?r=eyJrIjoiNzJmZTkwMzEtYjFiOS00MGM1LWIwNDktZTY0YWZiOTcyYzM1IiwidCI6ImRjMzgyZTVkLTUwZjUtNDQ5Ny1hN2U2LTAxY2QzMGUxNTkyNSJ9" target="_blank" rel="noopener">Open Automation report ↗</a>
     </div>
     <div class="cta">
+      <a class="btn" href="https://github.com/rajeswarinagarajan2000/retail-analytics-suite" target="_blank" rel="noopener">GitHub repo ↗</a>
       <a class="btn" href="files/Sales_Performance_Dashboard.pbix">Sales .pbix</a>
       <a class="btn" href="files/Inventory_Allocation_Dashboard.pbix">Inventory .pbix</a>
       <a class="btn" href="files/Automation_Performance_Dashboard.pbix">Automation ROI .pbix</a>
     </div>
   </article>
 
-  <article class="project" id="p-hr">
+  <article class="project" id="p-mbr">
     <div class="p-head">
-      <h3>HR Operations Suite</h3>
-      <div class="p-meta">Independent project · Nov 2026</div>
+      <h3>MBR Executive Dashboard</h3>
+      <div class="p-meta">Vision Group Retail · Mar – Apr 2026</div>
     </div>
-    <div class="tags"><span class="tag">Power Apps (Model-driven)</span><span class="tag">Dataverse</span><span class="tag">Power Automate</span><span class="tag">AI Builder</span><span class="tag">Power BI</span><span class="tag">DAX</span><span class="badge">Sample data</span></div>
-    <p>One connected HR and finance back office built on a single Dataverse data model, instead of separate demos. HR staff manage employees in a model-driven app, onboarding runs on its own, managers see live HR KPIs in Power BI, and supplier invoices are read by AI and routed for approval.</p>
-    <div class="suite">
-      <div><b>Employee Management</b><span>Model-driven app on 8 related Dataverse tables (employees, departments, job roles, locations, onboarding, vendors, invoices) with business rules and a custom security role</span></div>
-      <div><b>Automated Onboarding</b><span>3 Power Automate flows create each new hire's onboarding checklist from templates, track progress, and email overdue-task alerts</span></div>
-      <div><b>HR Performance Dashboard</b><span>Power BI on Dataverse: headcount, attrition %, new hires, onboarding progress and overdue tasks, built with DAX measures and a custom theme</span></div>
-      <div><b>AI Invoice Processing</b><span>AI Builder reads PDF invoices saved to OneDrive, matches or creates the vendor, saves the invoice, and sends low-confidence (under 80%) or high-value (over ₹50,000) invoices for approval</span></div>
+    <div class="tags"><span class="tag">Power BI</span><span class="tag">DAX</span><span class="tag">Power Query</span><span class="tag">Data modeling</span><span class="tag">Excel</span></div>
+    <p>An executive Monthly Business Review dashboard that brings data from 4+ sources into one reporting view. I built the DAX measures and Power Query transformations for KPI tracking, trend analysis and cross-unit comparison, and automated the refresh so the report no longer needs manual preparation. Senior management adopted it as their primary reporting tool.</p>
+    <details class="more"><summary>Show details and screenshots</summary>
+    <div class="shots one"><figure class="shot wide"><a href="img/mbr-headcount.jpg" target="_blank" rel="noopener"><img src="img/mbr-headcount.jpg" width="910" height="498" decoding="async" alt="Headcount utilization by subscene, dedicated vs non-dedicated model owners (client and staff names left out)"></a><figcaption>Headcount utilization by subscene, dedicated vs non-dedicated model owners (client and staff names left out)</figcaption></figure></div>
+  </details>
+  </article>
+
+  <article class="project" id="p-m365">
+    <div class="p-head">
+      <h3>Microsoft 365 Process Automation</h3>
+      <div class="p-meta">Vision Group Retail · Feb – Apr 2026</div>
     </div>
-    <div class="live">
-      <div class="live-head">
-        <b><span class="dot"></span>Live HR dashboard (Power BI)</b>
-      </div>
-      <div class="live-frame"><iframe title="Live HR Operations Power BI dashboard" src="https://app.powerbi.com/view?r=eyJrIjoiMWE5MDgwYWYtNzI1My00MjNlLTljMzUtNjdhYjk2ZjQ5YmI4IiwidCI6ImRjMzgyZTVkLTUwZjUtNDQ5Ny1hN2U2LTAxY2QzMGUxNTkyNSJ9" allowfullscreen loading="lazy"></iframe></div>
-      <p class="note">Headcount, attrition, new hires and onboarding progress. Click the slicers to filter and use the arrows at the bottom to change pages.</p>
+    <div class="tags"><span class="tag">Power Automate</span><span class="tag">Outlook</span><span class="tag">Teams</span><span class="tag">SharePoint</span><span class="tag">Excel</span></div>
+    <p>Several cloud flows that cut manual email handling. They route and respond to emails automatically and post Teams notifications as part of approval workflows. The flow below picks up UAT and ad-hoc request emails, files their attachments in a new SharePoint folder and notifies the team in Teams.</p>
+    <details class="more"><summary>Show details and screenshots</summary>
+    <div class="shots one narrow"><figure class="shot"><a href="img/m365-uat-flow.jpg" target="_blank" rel="noopener"><img src="img/m365-uat-flow.jpg" width="797" height="587" decoding="async" alt="UAT &amp; ad-hoc request flow: new email → SharePoint folder → loop over attachments → Teams message"></a><figcaption>UAT &amp; ad-hoc request flow: new email → SharePoint folder → loop over attachments → Teams message</figcaption></figure></div>
+  </details>
+  </article>
+
+  <article class="project" id="p-leave">
+    <div class="p-head">
+      <h3>Leave Management System</h3>
+      <div class="p-meta">Self-initiated · Jul – Oct 2026</div>
     </div>
-    <div class="cta">
-      <a class="btn primary" href="https://app.powerbi.com/view?r=eyJrIjoiMWE5MDgwYWYtNzI1My00MjNlLTljMzUtNjdhYjk2ZjQ5YmI4IiwidCI6ImRjMzgyZTVkLTUwZjUtNDQ5Ny1hN2U2LTAxY2QzMGUxNTkyNSJ9" target="_blank" rel="noopener">Open HR dashboard ↗</a>
-    </div>
-    <div class="shots"><figure class="shot"><a href="img/hr-tables-1.jpg" target="_blank" rel="noopener"><img src="img/hr-tables-1.jpg" width="1150" height="762" loading="lazy" decoding="async" alt="Dataverse tables 1 of 2: Employees, Departments, Job Roles, Locations"></a><figcaption>Dataverse tables 1 of 2: Employees, Departments, Job Roles, Locations</figcaption></figure><figure class="shot"><a href="img/hr-tables-2.jpg" target="_blank" rel="noopener"><img src="img/hr-tables-2.jpg" width="1150" height="762" loading="lazy" decoding="async" alt="Dataverse tables 2 of 2: Onboarding Templates, Onboarding Tasks, Vendors, Invoices"></a><figcaption>Dataverse tables 2 of 2: Onboarding Templates, Onboarding Tasks, Vendors, Invoices</figcaption></figure></div>
-    <details class="more"><summary>Show all Power Automate flows (4)</summary><div class="shots"><figure class="shot"><a href="img/hr-flow-create-tasks.jpg" target="_blank" rel="noopener"><img src="img/hr-flow-create-tasks.jpg" width="1150" height="762" loading="lazy" decoding="async" alt="Flow 1 · Onboarding – Create Tasks: new hire added → task checklist built from templates → email sent"></a><figcaption>Flow 1 · Onboarding – Create Tasks: new hire added → task checklist built from templates → email sent</figcaption></figure><figure class="shot"><a href="img/hr-flow-mark-complete.jpg" target="_blank" rel="noopener"><img src="img/hr-flow-mark-complete.jpg" width="1150" height="762" loading="lazy" decoding="async" alt="Flow 2 · Onboarding – Mark Complete: task updated → checks open tasks → updates onboarding status"></a><figcaption>Flow 2 · Onboarding – Mark Complete: task updated → checks open tasks → updates onboarding status</figcaption></figure><figure class="shot"><a href="img/hr-flow-overdue-reminder.jpg" target="_blank" rel="noopener"><img src="img/hr-flow-overdue-reminder.jpg" width="1150" height="762" loading="lazy" decoding="async" alt="Flow 3 · Onboarding – Overdue Reminder: scheduled run → overdue tasks → HTML table email"></a><figcaption>Flow 3 · Onboarding – Overdue Reminder: scheduled run → overdue tasks → HTML table email</figcaption></figure><figure class="shot"><a href="img/hr-flow-invoice.jpg" target="_blank" rel="noopener"><img src="img/hr-flow-invoice.jpg" width="1150" height="762" loading="lazy" decoding="async" alt="Flow 4 · Invoice – Process with AI: AI Builder reads the PDF → vendor matched or created → invoice saved → approval if needed"></a><figcaption>Flow 4 · Invoice – Process with AI: AI Builder reads the PDF → vendor matched or created → invoice saved → approval if needed</figcaption></figure></div></details>
-    <p><b>Next:</b> a Copilot Studio employee help agent that answers HR questions from the same data (in progress).</p>
+    <div class="tags"><span class="tag">Power Apps (Canvas)</span><span class="tag">Power Fx</span><span class="tag">Power Automate</span><span class="tag">SharePoint Lists</span><span class="tag">Outlook</span></div>
+    <p>An end-to-end leave system on the Power Platform. Employees and managers log in to separate, role-based screens. Employees submit Casual, Earned or Permission leave with the total days calculated automatically. A Power Automate flow emails the manager the moment a request is created, and the manager approves or rejects it in one click. A dashboard tracks totals and colour-coded status.</p>
+    <div class="cta"><a class="btn" href="https://github.com/rajeswarinagarajan2000/leave-management-system" target="_blank" rel="noopener">GitHub repo ↗</a></div>
+    <details class="more"><summary>Show details and screenshots</summary>
+    <div class="shots"><figure class="shot"><a href="img/leave-request.jpg" target="_blank" rel="noopener"><img src="img/leave-request.jpg" width="1600" height="814" decoding="async" alt="New leave request with auto-calculated days"></a><figcaption>New leave request with auto-calculated days</figcaption></figure><figure class="shot"><a href="img/leave-pending.jpg" target="_blank" rel="noopener"><img src="img/leave-pending.jpg" width="1600" height="849" decoding="async" alt="Manager queue with one-click Approve / Reject"></a><figcaption>Manager queue with one-click Approve / Reject</figcaption></figure><figure class="shot"><a href="img/leave-dashboard.jpg" target="_blank" rel="noopener"><img src="img/leave-dashboard.jpg" width="1600" height="857" decoding="async" alt="Leave dashboard with KPI cards and status history"></a><figcaption>Leave dashboard with KPI cards and status history</figcaption></figure></div>
+    <details class="more"><summary>Show all screens (login, confirmation, manager email, approval, flow, run history)</summary><div class="shots"><figure class="shot"><a href="img/leave-login.jpg" target="_blank" rel="noopener"><img src="img/leave-login.jpg" width="1600" height="785" decoding="async" alt="Employee login, with a separate manager login"></a><figcaption>Employee login, with a separate manager login</figcaption></figure><figure class="shot"><a href="img/leave-submitted.jpg" target="_blank" rel="noopener"><img src="img/leave-submitted.jpg" width="1600" height="857" decoding="async" alt="Confirmation screen after submitting"></a><figcaption>Confirmation screen after submitting</figcaption></figure><figure class="shot"><a href="img/leave-email.jpg" target="_blank" rel="noopener"><img src="img/leave-email.jpg" width="1112" height="460" decoding="async" alt="Email the flow sends to the manager"></a><figcaption>Email the flow sends to the manager</figcaption></figure><figure class="shot"><a href="img/leave-approved.jpg" target="_blank" rel="noopener"><img src="img/leave-approved.jpg" width="1600" height="861" decoding="async" alt="Approval confirmation"></a><figcaption>Approval confirmation</figcaption></figure><figure class="shot"><a href="img/leave-flow.jpg" target="_blank" rel="noopener"><img src="img/leave-flow.jpg" width="1495" height="897" decoding="async" alt="Flow: SharePoint item created → send email"></a><figcaption>Flow: SharePoint item created → send email</figcaption></figure><figure class="shot"><a href="img/leave-run-history.jpg" target="_blank" rel="noopener"><img src="img/leave-run-history.jpg" width="1600" height="529" decoding="async" alt="Flow run history"></a><figcaption>Flow run history</figcaption></figure></div></details>
+  </details>
   </article>
 </section>
 
@@ -465,7 +475,10 @@ document.getElementById('copy').addEventListener('click', function(){
 });
 </script>
 <script>
-document.querySelectorAll('.tab').forEach(function(t){t.addEventListener('click',function(){document.querySelectorAll('.tab').forEach(function(x){x.classList.remove('on');x.setAttribute('aria-selected','false')});t.classList.add('on');t.setAttribute('aria-selected','true');document.getElementById('pbi').src=t.dataset.src;});});
+document.querySelectorAll('.tab').forEach(function(t){t.addEventListener('click',function(){document.querySelectorAll('.tab').forEach(function(x){x.classList.remove('on');x.setAttribute('aria-selected','false')});t.classList.add('on');t.setAttribute('aria-selected','true');var f=document.getElementById('pbi');f.src=t.dataset.src;var b=f.parentNode.querySelector('.loadpbi');if(b)b.remove();});});
+</script>
+<script>
+document.querySelectorAll('.loadpbi').forEach(function(b){b.addEventListener('click',function(){var f=b.parentNode.querySelector('iframe');f.src=f.dataset.src;b.remove();});});
 </script>
 </body>
 </html>
